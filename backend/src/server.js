@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Welcome to Spotly API 🚀"
+    message: "Welcome to Spotly"
   });
 });
 
