@@ -1,6 +1,8 @@
 /* categories */
 
-
+*{
+    box-sizing: none;
+}
 
 ul{
     list-style-type: none;
@@ -43,23 +45,23 @@ a{
     box-shadow: 3px 3px #f5f4f4;
 }
 .categories .item {
-    display: flex;
-    align-items: center;
-    border: 1px solid #c7c6c69d;
+    display: flex ;
+    align-items: center ;
+    border: 1px solid #c7c6c69d ;
     background-color: #fff;
-    padding-block: 5px;
-    padding-inline: 15px;
-    border-radius: 10px;
+    padding-block: 10px ;
+    padding-inline: 20px ;
+    border-radius: 10px ;
 
 }
 
 .categories .item i{
-    justify-content: center;
-    padding: 10px;
-    border: 1px solid transparent;
-    margin-right: 15px;
-    border-radius: 5px;
-    font-size: 17px;
+    justify-content: center ;
+    padding: 10px ;
+    border: 1px solid transparent ;
+    margin-right: 15px ;
+    border-radius: 5px ;
+    font-size: 17px ;
 
 
 }
@@ -67,8 +69,9 @@ a{
     margin-top: 5px;}
    
 .type h3 {
+    font-size: 18px ;
     margin: 0;
-    color: #504f4f;
+    font-weight: 700;
 }
 
 

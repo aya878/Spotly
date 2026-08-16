@@ -1,0 +1,21 @@
+/* Home only */
+app-home,
+app-home * {
+    box-sizing: content-box;
+}
+
+app-home h1,
+app-home h2,
+app-home h3,
+app-home h4,
+app-home h5,
+app-home h6,
+app-home p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+app-home button,
+app-home input {
+    font-family: Arial, sans-serif;
+}

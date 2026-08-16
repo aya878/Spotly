@@ -1,0 +1,22 @@
+.home-page {
+    font-family: Arial, sans-serif;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page h4,
+.home-page h5,
+.home-page h6,
+.home-page p {
+    margin: 0;
+}
+
+.home-page button,
+.home-page input {
+    font-family: Arial, sans-serif;
+}
+.home-page,
+.home-page * {
+    box-sizing: content-box;
+}

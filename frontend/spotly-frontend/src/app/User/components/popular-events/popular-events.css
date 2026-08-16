@@ -73,6 +73,10 @@ margin-bottom: 0%;
     width: 42%;
     margin-top: 20px;
 }
+.event-contant2 h4{
+    font-size: 18px;
+    font-weight: 600;
+}
 .card-popular .heart {
     width: 10%;
 text-align: right;

@@ -116,14 +116,14 @@ a{
 }
 .privcy p{
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 28px;
     margin-top: 0px;
 }
 .links a{
     padding-inline:10px ;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 24px;
     margin-top: 0px;
     transition: .2s;
