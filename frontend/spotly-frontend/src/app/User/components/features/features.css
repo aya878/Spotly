@@ -1,0 +1,196 @@
+/* adv */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+ul{
+    list-style-type: none;
+}
+span,
+a{
+    display:inline-block;
+}
+a{
+    text-decoration:none;
+}
+
+.containeruser {
+    width: 90%;
+    margin: auto;
+}
+
+.adv {
+    width: 100%;
+    background-color:rgba(238, 229, 248, 0.763);
+    padding-block: 30px;
+}
+.specifications{
+    display: flex;
+    justify-content: space-between;
+}
+.adv-contant {
+    display: flex;
+    width: 21%;
+    justify-content: space-between;
+    align-items: center;
+}
+.adv-contant .adv-icon {
+   margin-right: 20px;
+    border:3px solid #fff;
+    border-radius: 50%;
+    padding: 20px;
+background-color: #fff;
+font-size: 22px;
+color: #7601CB;
+
+}
+.adv-contant .adv-info h3{
+    font-size: 19px;
+    margin-bottom: 8px;
+    font-weight: 900;
+}
+.adv-contant .adv-info p{
+    font-size: 14px;
+    font-weight: 600;
+
+}
+ /* support */
+
+ .support {
+    width: 100%;
+    background-color:rgba(238, 229, 248, 0.763);
+    /* color: #fff; */
+    
+ }
+ .supp {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 50px;
+    padding-block: 30px;
+ }
+ .support-content h2{
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 35px;
+ }
+ .support-content p {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 500;
+ }
+ .support-email input{
+        border: none;
+    font-size: 16px;
+    padding-block: 10px;
+    padding-inline: 20px;
+    outline: none;
+    border-radius: 5px;
+ }
+ .support-email button {
+        padding: 11px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    background-color:#7601CB;
+    color: #fff;
+    font-weight: bold;
+ }
+
+ @media (max-width: 1200px) {
+    .adv {
+        padding: 40px 20px;
+    }
+
+    .adv-contant {
+        width: 23%;
+    }
+
+    .adv-contant .adv-icon {
+        padding: 15px;
+        margin-right: 10px;
+    }
+
+    .adv-contant .adv-info h3 {
+        font-size: 17px;
+    }
+
+    .adv-contant .adv-info p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 992px) {
+    .specifications {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .adv-contant {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .adv {
+        padding: 35px 15px;
+    }
+
+    .adv-contant {
+        width: 100%;
+    }
+
+    .adv-contant .adv-info {
+        flex: 1;
+    }
+}
+@media (max-width: 992px) {
+    .supp {
+        padding-inline: 20px;
+        gap: 20px;
+    }
+
+    .support-content {
+        width: 50%;
+    }
+
+    .support-email {
+        width: 50%;
+    }
+
+    .support-email input {
+        width: 65%;
+    }
+}
+
+@media (max-width: 768px) {
+    .supp {
+        flex-direction: column;
+        padding-inline: 10px;
+    }
+
+    .support-content,
+    .support-email {
+        width: 100%;
+    }
+
+    .support-content h2 {
+        font-size: 23px;
+    }
+
+    .support-email {
+        display: flex;
+        gap: 8px;
+    }
+
+    .support-email input {
+        width: 70%;
+    }
+
+    .support-email button {
+        width: 30%;
+    }
+}

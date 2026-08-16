@@ -1,0 +1,135 @@
+/* popular */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+ul{
+    list-style-type: none;
+}
+span,
+a{
+    display:inline-block;
+}
+a{
+    text-decoration:none;
+}
+
+.containeruser {
+    width: 90%;
+    margin: auto;
+}
+.categoriestitel  {
+    margin-top: 30px; 
+    display: flex;
+    justify-content: space-between;
+}
+.categoriestitel h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+.categoriestitel a{
+    font-weight: 700;
+    font-size: 18px;
+    color: #7601CB;
+}
+.upcomingcard {
+    margin-block: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.card-popular {
+    display: flex;
+     width: 23%;
+     border-radius: 15px;
+align-items: start;
+     border: 2px solid #e6e2e29d;
+justify-content: space-between;
+padding: 10px;
+cursor: pointer;
+}
+
+.card-popular:hover{
+        transform: translate(-4px,-4px);
+    box-shadow: 3px 3px #f5f4f4;
+}
+.card-popular img{
+
+    width: 100%;
+align-self: center;
+border-radius: 10px;
+margin-bottom: 0%;
+
+}
+.event-img{
+    width: 40%;
+    align-items: center;
+    
+}
+.event-contant2 {
+    width: 42%;
+    margin-top: 20px;
+}
+.card-popular .heart {
+    width: 10%;
+text-align: right;
+align-self: normal;
+}
+#price2 , .heart {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #7601CB;
+
+}
+.address {
+    display: flex;
+    font-size: 16px;
+    color: #504f4f;
+    align-items: center;
+}
+.address i {
+    margin-right: 8px;
+  
+}
+.event-contant2 h4{
+    margin-bottom: 10px;
+}
+.event-contant2 p{
+    margin-top: 3%;
+    margin-bottom: 0px;
+}
+#price2 {
+    margin-bottom: 0px;
+}
+@media (max-width: 1200px) {
+    .card-popular {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 992px) {
+    .card-popular {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .upcomingcard{
+        display: block;
+    }
+    .card-popular {
+        width: 80%;
+        margin: auto;
+    }
+
+    .event-contant2 h4 {
+        font-size: 17px;
+    }
+
+    .event-contant2 p {
+        font-size: 14px;
+    }
+}

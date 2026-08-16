@@ -1,0 +1,186 @@
+/* heroo */
+
+ html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+ul{
+    list-style-type: none;
+}
+span,
+a{
+    display:inline-block;
+}
+a{
+    text-decoration:none;
+}
+
+.center {
+  text-align: center;
+}
+
+.head{
+    width: 100%;
+    background-image:url("/image/back.jpg");
+    background-size: cover;
+    background-position: center 70%;
+    padding-bottom: 50px;
+    padding-top:40px ;
+    
+   
+
+}
+
+.head .container-user {
+    width: 80%;
+    margin: auto;
+}
+.head .tit {
+    width: 40%;
+     padding-inline: 50px;
+
+     
+     
+}
+.head .container-user h2 {
+    
+    font-size: 55px;
+    color: #fff;
+   
+}
+.head .tit p {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.par{
+    display: flex;
+    border: 1px solid white;
+    background-color: #fff;
+    padding: 15px;
+    margin-block: 20px;
+    margin-inline: 50px;
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+.par input{
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+    outline: none;
+}
+.par i {
+    color: #585858;
+    font-size: 16px;
+    padding: 3px;
+}
+
+.search-btn button {
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 18px;
+    border: none;
+    background-color:#7601CB;
+    color: #fff;
+    font-weight: bold;
+
+}
+
+@media (max-width: 1400px) {
+    .head .tit {
+        width: 50%;
+    }
+
+    .head .container-user h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .head .tit {
+        width: 55%;
+        padding-inline: 30px;
+    }
+
+    .head .container-user h2 {
+        font-size: 45px;
+    }
+
+    .par {
+        margin-inline: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .head .tit {
+        width: 70%;
+        padding-inline: 20px;
+    }
+
+    .head .container-user h2 {
+        font-size: 40px;
+    }
+
+    .head .tit p {
+        font-size: 17px;
+    }
+
+    .par {
+        margin-inline: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .par > div {
+        width: calc(50% - 10px);
+    }
+
+    .search-btn {
+        width: 100% !important;
+    }
+
+    .search-btn button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .head {
+        padding-top: 80px;
+    }
+
+    .head .tit {
+        width: 100%;
+        padding-inline: 10px;
+        text-align: center;
+    }
+
+    .head .container-user h2 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .head .tit p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .par {
+        margin-inline: 0;
+        padding: 12px;
+    }
+
+    .par > div {
+        width: 100%;
+    }
+
+    .par input {
+        width: calc(100% - 30px);
+    }
+}

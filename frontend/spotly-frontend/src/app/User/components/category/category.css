@@ -1,0 +1,156 @@
+/* categories */
+
+
+
+ul{
+    list-style-type: none;
+}
+span,
+a{
+    display:inline-block;
+}
+a{
+    text-decoration:none;
+}
+
+.containeruser {
+    width: 90%;
+    margin: auto;
+}
+.categoriestitel  {
+    margin-top: 30px; 
+    display: flex;
+    justify-content: space-between;
+}
+.categoriestitel h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+.categoriestitel a{
+    font-weight: 700;
+    font-size: 18px;
+    color: #7601CB;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-between;
+    margin-top:30px ;
+    cursor: pointer;
+}
+.categories .item:hover{
+    transform: translate(-4px,-4px);
+    box-shadow: 3px 3px #f5f4f4;
+}
+.categories .item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #c7c6c69d;
+    background-color: #fff;
+    padding-block: 5px;
+    padding-inline: 15px;
+    border-radius: 10px;
+
+}
+
+.categories .item i{
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid transparent;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-size: 17px;
+
+
+}
+.type p{
+    margin-top: 5px;}
+   
+.type h3 {
+    margin: 0;
+    color: #504f4f;
+}
+
+
+
+.music i{
+
+    background-color: #e2daf7;
+    color: #885BF6;
+}
+.Business i {
+     background-color: #f7e3d7;
+    color: #ff863b;
+}
+.technology i {
+        background-color: #dff3e9;
+    color: #1d7281;
+}
+
+.art i{
+        background-color: #fadcdc;
+    color: #ff0000;
+}
+.sport i{
+        background-color: #f7f7bb;
+    color: #ffd105;
+}
+.workshop i{
+        background-color: #f5d1f7;
+    color: #ef0dcd;
+}
+
+@media (max-width: 1400px) {
+    .categories .item {
+        padding-inline: 18px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .categories {
+        gap: 12px;
+    }
+
+    .categories .item {
+        padding-inline: 12px;
+        width: calc(33.333% - 10px);
+    }
+}
+
+@media (max-width: 992px) {
+    .categories {
+        flex-wrap: wrap;
+    }
+
+    .categories .item {
+        width: calc(33.333% - 10px);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories {
+        gap: 12px;
+    }
+
+    .categories .item {
+        width: 70%;
+        margin: auto;
+       
+    }
+
+    .categories .item i {
+        padding: 8px;
+        margin-right: 8px;
+    }
+
+    .categoriestitel h2 {
+        font-size: 25px;
+    }
+
+    .categoriestitel a {
+        font-size: 15px;
+    }
+}
+
+

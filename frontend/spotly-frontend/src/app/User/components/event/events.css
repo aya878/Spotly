@@ -1,0 +1,154 @@
+/* upcoming */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+ul{
+    list-style-type: none;
+}
+span,
+a{
+    display:inline-block;
+}
+a{
+    text-decoration:none;
+}
+
+.containeruser {
+    width: 90%;
+    margin: auto;
+}
+.categoriestitel  {
+    margin-top: 30px; 
+    display: flex;
+    justify-content: space-between;
+}
+.categoriestitel h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+.categoriestitel a{
+    font-weight: 700;
+    font-size: 18px;
+    color: #7601CB;
+}
+.upcomingcard {
+    margin-block: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.card-event:hover{
+    transform: translate(-4px,-4px);
+    box-shadow: 3px 3px #f5f4f4;
+}
+.card-event {
+    width: 23%;
+     border: 2px solid #e6e2e29d;
+     border-radius: 15px;
+     position: relative;
+     cursor: pointer;
+
+}
+.card-event img {
+    width: 100%;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+      height: 200px;
+    object-fit: cover;
+    display: block;
+
+}
+.date-event {
+    border: 1px solid #e6e2e29d;
+    align-items: center;
+    background-color: #fff;
+    position: absolute;
+    top:170px;
+    left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.date-event p{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0%;
+
+}
+.date-event h4{
+    margin: 0%;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+.event-contant {
+    margin-top: 30px;
+    padding: 15px;
+}
+.event-contant h4 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-bottom: 8px;
+
+}
+
+.address {
+    display: flex;
+    font-size: 16px;
+    color: #504f4f;
+    align-items: center;
+}
+.address i {
+    margin-right: 5px;
+  
+}
+#price {
+    text-align: right;
+    font-size: 19px;
+    font-weight: bolder;
+    color:#7601CB;
+    margin-top: 8px;
+
+}
+@media (max-width: 1200px) {
+    .upcomingcard {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card-event {
+        width:50%;
+    }
+}
+
+@media (max-width: 992px) {
+    .upcomingcard{
+        display: flex;
+    }
+    .card-event {
+        width: 40%
+    }
+}
+
+@media (max-width: 768px) {
+    .upcomingcard {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card-event {
+        width: 100%;
+    }
+
+    .card-event img {
+        height: 220px;
+    }
+
+    .date-event {
+        top: 190px;
+    }
+}
