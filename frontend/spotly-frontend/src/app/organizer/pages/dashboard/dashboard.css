@@ -6,6 +6,7 @@
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .page-header {
@@ -36,6 +37,13 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .stat-icon {
@@ -49,6 +57,11 @@
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  transition: transform 0.25s ease;
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.08);
 }
 
 .stat-content {
@@ -100,6 +113,13 @@
   border-radius: 12px;
   padding: 18px;
   overflow: hidden;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card-header {
@@ -137,6 +157,7 @@
   gap: 14px;
   padding: 12px 0;
   border-bottom: 1px solid #eee;
+  box-sizing: border-box;
 }
 
 .event-row:last-child {
@@ -194,6 +215,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 
 .tickets strong {
@@ -220,6 +242,7 @@
   gap: 13px;
   padding: 12px 0;
   border-bottom: 1px solid #eee;
+  box-sizing: border-box;
 }
 
 .booking-row:last-child {
@@ -300,6 +323,12 @@
   border-radius: 12px;
   padding: 16px 22px 28px;
   box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.quick-actions:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .quick-actions .card-header {
@@ -330,11 +359,13 @@
   gap: 8px;
   font-size: 13px;
   font-weight: 600;
+  transition: 0.2s ease;
 }
 
 .action-btn:hover {
   border-color: #7601CB;
   color: #7601CB;
+  transform: translateY(-2px);
 }
 
 .action-btn.primary {
@@ -345,9 +376,12 @@
 
 .action-btn.primary:hover {
   background-color: #6500ad;
+  border-color: #6500ad;
+  color: white;
 }
 
 @media (max-width: 1199px) {
+
   .dashboard {
     padding: 22px 24px;
   }
@@ -359,9 +393,11 @@
   .dashboard-content {
     grid-template-columns: 1fr;
   }
+
 }
 
 @media (max-width: 991px) {
+
   .dashboard {
     padding: 20px;
   }
@@ -377,9 +413,11 @@
   .dashboard-card {
     padding: 16px;
   }
+
 }
 
 @media (max-width: 767px) {
+
   .dashboard {
     height: calc(100vh - 70px);
     padding: 18px 16px 24px;
@@ -403,6 +441,12 @@
     padding: 17px;
   }
 
+  .stat-card:hover,
+  .dashboard-card:hover,
+  .quick-actions:hover {
+    transform: none;
+  }
+
   .stat-icon {
     width: 44px;
     height: 44px;
@@ -420,14 +464,37 @@
 
   .dashboard-card {
     padding: 15px;
+    overflow: visible;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .card-header {
+    margin-bottom: 12px;
   }
 
   .card-header h2 {
     font-size: 16px;
   }
 
+  .upcoming-events,
+  .bookings {
+    gap: 12px;
+  }
+
   .event-row {
+    min-height: 0;
+    padding: 15px;
     gap: 10px;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .event-row:last-child {
+    border-bottom: 1px solid #eee;
   }
 
   .event-image {
@@ -458,7 +525,17 @@
   }
 
   .booking-row {
+    min-height: 0;
+    padding: 15px;
     gap: 10px;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .booking-row:last-child {
+    border-bottom: 1px solid #eee;
   }
 
   .customer-avatar {
@@ -483,9 +560,11 @@
     padding: 15px;
     flex-shrink: 0;
   }
+
 }
 
 @media (max-width: 480px) {
+
   .dashboard {
     padding: 16px 12px 20px;
   }
@@ -519,6 +598,11 @@
     font-size: 12px;
   }
 
+  .event-row,
+  .booking-row {
+    padding: 13px;
+  }
+
   .event-row {
     align-items: flex-start;
   }
@@ -548,4 +632,5 @@
     padding: 15px;
     flex-shrink: 0;
   }
+
 }

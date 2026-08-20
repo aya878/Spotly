@@ -11,26 +11,29 @@
             <ul  class="nav-menu"
   id="navMenu"
   [class.show]="menuOpen">
-                <li><a href="" id="active">Home</a></li>
-                <li><a href="" class="navlink">Events</a></li>
-                <li><a href="" class="navlink">Categories</a></li>
-                <li><a href="" class="navlink">About Us</a></li>
-                <li><a href="" class="navlink"> Contact</a></li>
+                <li><a routerLink="/home" id="active">Home</a></li>
+                <li><a routerLink="/allevent" class="navlink">Events</a></li>
+                <li><a routerLink="/category" class="navlink">Categories</a></li>
+                <li><a href="/aboutus" class="navlink">About Us</a></li>
+                <li><a  class="navlink" (click)="goToContact()"> Contact</a></li>
             </ul>
 
         </div>
         <div class="icon">
             <i class="fa-solid fa-magnifying-glass"></i>
             <i class="fa-regular fa-bell"></i>
-            <img src="image/389068855330083718.jpg" alt="user">
-            <a href="sign-up.html"><i class="fa-solid fa-right-to-bracket"></i></a>
- <i
+<a routerLink="/profileuser">
+  <img [src]="userAvatar" alt="user">
+</a>
+            <a routerLink="/signup"><i class="fa-solid fa-right-to-bracket"></i></a>
+ </div>
+
+            <i
   class="fa-solid fa-bars menu-toggle"
   (click)="toggleMenu()">
 </i>
 
-        </div>
-
+        
 
     </div>
 </div>

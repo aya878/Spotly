@@ -1,0 +1,54 @@
+<div class="totalevent">
+<div class="heroo">
+    <div class="container-user">
+
+    </div>
+</div>
+<section class="searchsection">
+    <div class=" container-user">
+<div class="search-input-wrapper">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchInput" placeholder="Search event..." />
+  </div>
+
+  <!-- Category Dropdown List -->
+  <div class="category-select-wrapper">
+    <select id="categorySelect">
+      <option value="all">All Events</option>
+      <option value="sports">Sports</option>
+      <option value="art">Art & Culture</option>
+      <option value="music">Music</option>
+      <option value="technology">Technology</option>
+      <option value="workshops">Workshops</option>
+    </select>
+  </div>
+  <div class=""></div>
+</div></section>
+<!-- cardevent -->
+<section class="cardsevent">
+  <div class="container-user">
+    
+    <div class="card" style="width: 18rem;" *ngFor="let event of filteredEvents">
+      <img [src]="event.image" class="card-img-top" [alt]="event.title">
+      
+      <div class="price-event">
+        <h4>{{ event.price }} EGP</h4>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">{{ event.title }}</h5>
+        <p class="card-text">{{ event.desc }}</p>
+
+        <div class="date-card">
+<button (click)="goToDetails(event.id)" class="btn btn-color">Booking</button>          
+          <h4>
+            <i class="fa-regular fa-calendar-days"></i> 
+            {{ event.date | date:'dd MMM, yyyy' }}
+          </h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>

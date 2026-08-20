@@ -1,10 +1,8 @@
 .earnings-page {
   width: 100%;
-  height: calc(100vh - 70px);
-  padding: 22px 30px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background-color: #f8f8f8;
+  min-height: 100%;
+  padding: 28px 32px;
+  box-sizing: border-box;
 }
 
 .page-header {
@@ -12,35 +10,43 @@
 }
 
 .page-header h1 {
-  margin: 0;
-  color: #222;
-  font-size: 30px;
+  margin: 0 0 6px;
+  font-size: 26px;
   font-weight: 700;
+  color: #222;
 }
 
 .page-header p {
-  margin: 5px 0 0;
-  color: #888;
-  font-size: 14px;
+  margin: 0;
+  font-size: 15px;
+  color: #777;
 }
 
 .earnings-cards {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .earning-card {
-  min-width: 0;
-  min-height: 125px;
-  padding: 22px;
-  background-color: white;
+  background: #fff;
   border: 1px solid #eee;
-  border-radius: 12px;
+  border-radius: 14px;
+  padding: 20px;
   display: flex;
   align-items: center;
   gap: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.earning-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(118, 1, 203, 0.10);
+  border-color: #ead7f7;
 }
 
 .earning-icon {
@@ -48,40 +54,52 @@
   height: 48px;
   flex-shrink: 0;
   border-radius: 10px;
-  background-color: #f1e1ff;
+  background: #f1e1ff;
   color: #7601CB;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 21px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.earning-card:hover .earning-icon {
+  transform: scale(1.08) rotate(-3deg);
+  background: #ead5fa;
 }
 
 .earning-info {
   min-width: 0;
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
-.earning-info span {
-  color: #666;
-  font-size: 14px;
-  font-weight: 500;
+.earning-info > span {
+  color: #777;
+  font-size: 13px;
 }
 
-.earning-info strong {
-  margin-top: 6px;
-  color: #7601CB;
-  font-size: 24px;
+.money-value {
+  color: #222;
+  font-size: 19px;
   font-weight: 700;
   white-space: nowrap;
 }
 
+.money-value small {
+  color: #7601CB;
+  font-size: 11px;
+  font-weight: 600;
+}
+
 .transactions-card {
   width: 100%;
-  background-color: white;
+  background: #fff;
   border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
   box-sizing: border-box;
 }
 
@@ -89,197 +107,300 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .transactions-header h2 {
-  margin: 0;
-  color: #222;
+  margin: 0 0 4px;
   font-size: 18px;
   font-weight: 700;
+  color: #222;
 }
 
 .transactions-header span {
-  display: block;
-  margin-top: 4px;
   color: #888;
   font-size: 13px;
 }
 
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-}
-
 .transactions-table {
   width: 100%;
-  min-width: 700px;
-  margin-bottom: 0;
-  vertical-align: middle;
+  margin: 0;
+  border-color: #eee;
 }
 
 .transactions-table thead th {
   padding: 14px 12px;
-  background-color: #fafafa;
-  color: #666;
+  background: #fafafa;
   border-bottom: 1px solid #eee;
+  color: #666;
   font-size: 12px;
   font-weight: 600;
   white-space: nowrap;
 }
 
 .transactions-table tbody td {
-  padding: 15px 12px;
-  color: #444;
+  padding: 16px 12px;
   border-bottom: 1px solid #eee;
+  color: #555;
   font-size: 13px;
-  white-space: nowrap;
 }
 
 .transactions-table tbody tr:last-child td {
   border-bottom: none;
 }
 
+.transactions-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.transactions-table tbody tr:hover {
+  background: #fcfaff;
+}
+
 .event-info {
+  min-width: 220px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .event-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background-color: #f1e1ff;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #f1e1ff;
   color: #7601CB;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  font-size: 17px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.transactions-table tbody tr:hover .event-icon {
+  transform: scale(1.08);
+  background: #ead5fa;
+}
+
+.event-info span {
+  max-width: 220px;
+  color: #222;
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .date-info {
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #777;
+  white-space: nowrap;
+}
+
+.date-info i {
+  color: #7601CB;
+  font-size: 14px;
 }
 
 .amount {
   color: #7601CB;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.amount small {
+  font-size: 10px;
 }
 
 .status-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 85px;
-  padding: 5px 10px;
+  min-width: 75px;
+  padding: 6px 10px;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 600;
 }
 
 .status-badge.confirmed {
-  background-color: #e7f7ef;
-  color: #27945f;
+  background: #eefaf2;
+  color: #35a66f;
 }
 
 .status-badge.pending {
-  background-color: #fff5df;
-  color: #c88700;
-}
-
-.loading-state,
-.empty-state {
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #888;
-  text-align: center;
-}
-
-.loading-state .spinner-border {
-  color: #7601CB;
-  margin-bottom: 10px;
-}
-
-.empty-state i {
-  margin-bottom: 10px;
-  color: #7601CB;
-  font-size: 32px;
-}
-
-.empty-state h3 {
-  margin: 0 0 5px;
-  color: #333;
-  font-size: 16px;
-}
-
-.empty-state p {
-  margin: 0;
-  font-size: 13px;
+  background: #fff7e6;
+  color: #d99500;
 }
 
 @media (max-width: 1199px) {
   .earnings-page {
-    padding: 22px 24px;
+    padding: 24px;
+  }
+
+  .earning-card {
+    padding: 18px;
+  }
+
+  .transactions-card {
+    padding: 22px;
   }
 }
 
 @media (max-width: 991px) {
   .earnings-page {
-    padding: 20px;
+    padding: 22px;
   }
 
   .earnings-cards {
-    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .earning-card {
-    min-height: 105px;
-    padding: 18px;
-  }
-
-  .transactions-card {
     padding: 16px;
-  }
-}
-
-@media (max-width: 767px) {
-  .earnings-page {
-    height: calc(100vh - 70px);
-    padding: 18px 16px 24px;
-  }
-
-  .page-header h1 {
-    font-size: 24px;
-  }
-
-  .earning-card {
-    min-height: 100px;
-    padding: 17px;
   }
 
   .earning-icon {
     width: 44px;
     height: 44px;
-    font-size: 18px;
+    font-size: 19px;
   }
 
-  .earning-info strong {
-    font-size: 21px;
+  .money-value {
+    font-size: 17px;
   }
 
   .transactions-card {
-    padding: 14px;
+    padding: 18px;
+  }
+
+  .transactions-table thead th {
+    padding: 12px 10px;
+  }
+
+  .transactions-table tbody td {
+    padding: 14px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .earnings-page {
+    padding: 18px 16px 24px;
+  }
+
+  .page-header h1 {
+    font-size: 23px;
+  }
+
+  .page-header p {
+    font-size: 14px;
+  }
+
+  .earnings-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .earning-card {
+    padding: 16px;
+  }
+
+  .transactions-card {
+    padding: 15px;
+  }
+
+  .table-responsive {
+    overflow-x: visible;
   }
 
   .transactions-table {
-    min-width: 700px;
+    width: 100%;
+    min-width: 0;
+    display: block;
+  }
+
+  .transactions-table thead {
+    display: none;
+  }
+
+  .transactions-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .transactions-table tbody tr {
+    display: block;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .transactions-table tbody tr:hover {
+    background: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(118, 1, 203, 0.09);
+    border-color: #ead7f7;
+  }
+
+  .transactions-table tbody td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    box-sizing: border-box;
+  }
+
+  .transactions-table tbody td:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .transactions-table tbody td::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    color: #777;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .transactions-table tbody td:first-child {
+    padding-top: 0;
+  }
+
+  .event-info {
+    min-width: 0;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .event-info span {
+    max-width: 180px;
+  }
+
+  .date-info {
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  .amount {
+    text-align: right;
+  }
+
+  .status-badge {
+    flex-shrink: 0;
   }
 }
 
@@ -289,27 +410,55 @@
   }
 
   .page-header h1 {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   .page-header p {
-    font-size: 12px;
-  }
-
-  .earning-card {
-    min-height: 90px;
-    padding: 15px;
-  }
-
-  .earning-info span {
     font-size: 13px;
   }
 
-  .earning-info strong {
-    font-size: 19px;
+  .earning-card {
+    padding: 14px;
+  }
+
+  .earning-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .earning-info > span {
+    font-size: 12px;
+  }
+
+  .money-value {
+    font-size: 16px;
   }
 
   .transactions-card {
-    padding: 12px;
+    padding: 13px;
+  }
+
+  .transactions-table tbody tr {
+    padding: 14px;
+  }
+
+  .transactions-table tbody td {
+    align-items: flex-start;
+  }
+
+  .event-info span {
+    max-width: 140px;
+  }
+
+  .date-info span {
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .amount {
+    font-size: 12px;
   }
 }

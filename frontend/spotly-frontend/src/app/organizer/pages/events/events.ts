@@ -14,6 +14,7 @@ export class Events {
     {
       id: 1,
       title: 'Tech Conference 2026',
+      category: 'Conference',
       date: '2026-08-25',
       location: 'Cairo, Egypt',
       ticketsSold: 10,
@@ -24,6 +25,7 @@ export class Events {
     {
       id: 2,
       title: 'Music Festival',
+      category: 'Music',
       date: '2026-08-10',
       location: 'Giza, Egypt',
       ticketsSold: 15,
@@ -34,6 +36,7 @@ export class Events {
     {
       id: 3,
       title: 'Business Summit',
+      category: 'Business',
       date: '2026-09-15',
       location: 'New Cairo, Egypt',
       ticketsSold: 8,
@@ -44,6 +47,7 @@ export class Events {
     {
       id: 4,
       title: 'Startup Meetup',
+      category: 'Workshop',
       date: '2026-07-20',
       location: 'Alexandria, Egypt',
       ticketsSold: 10,
@@ -59,6 +63,7 @@ export class Events {
 
   newEvent = {
     title: '',
+    category: '',
     date: '',
     location: '',
     ticketsSold: 0,
@@ -91,6 +96,7 @@ export class Events {
 
     this.newEvent = {
       title: '',
+      category: '',
       date: '',
       location: '',
       ticketsSold: 0,
@@ -108,6 +114,7 @@ export class Events {
 
     this.newEvent = {
       title: '',
+      category: '',
       date: '',
       location: '',
       ticketsSold: 0,
@@ -120,6 +127,7 @@ export class Events {
 
     if (
       !this.newEvent.title.trim() ||
+      !this.newEvent.category ||
       !this.newEvent.date ||
       !this.newEvent.location.trim()
     ) {
@@ -129,6 +137,7 @@ export class Events {
     const event = {
       id: Date.now(),
       title: this.newEvent.title.trim(),
+      category: this.newEvent.category,
       date: this.newEvent.date,
       location: this.newEvent.location.trim(),
       ticketsSold: Math.max(
@@ -157,6 +166,7 @@ export class Events {
 
     this.newEvent = {
       title: event.title,
+      category: event.category,
       date: event.date,
       location: event.location,
       ticketsSold: event.ticketsSold,
@@ -172,6 +182,7 @@ export class Events {
     if (
       this.editingId === null ||
       !this.newEvent.title.trim() ||
+      !this.newEvent.category ||
       !this.newEvent.date ||
       !this.newEvent.location.trim()
     ) {
@@ -187,6 +198,7 @@ export class Events {
       return {
         ...event,
         title: this.newEvent.title.trim(),
+        category: this.newEvent.category,
         date: this.newEvent.date,
         location: this.newEvent.location.trim(),
         ticketsSold: Math.max(

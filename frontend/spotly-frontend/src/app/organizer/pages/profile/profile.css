@@ -3,6 +3,8 @@
   min-height: 100%;
   padding: 28px 32px;
   box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .profile-header {
@@ -16,6 +18,11 @@
   color: #222;
 }
 
+.profile-header p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
 
 .profile-content {
   display: flex;
@@ -31,6 +38,14 @@
   padding: 24px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
   box-sizing: border-box;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.profile-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  transform: translateY(-1px);
 }
 
 .profile-card-header {
@@ -74,6 +89,14 @@
   display: block;
   border-radius: 50%;
   object-fit: cover;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.profile-photo:hover img {
+  transform: scale(1.04);
+  box-shadow: 0 5px 16px rgba(118, 1, 203, 0.18);
 }
 
 .camera-btn {
@@ -90,6 +113,21 @@
   align-items: center;
   justify-content: center;
   font-size: 15px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.camera-btn:hover {
+  background-color: #6500ad;
+  transform: scale(1.08) rotate(-5deg);
+  box-shadow: 0 4px 12px rgba(118, 1, 203, 0.25);
+}
+
+.camera-btn:active {
+  transform: scale(0.95);
 }
 
 .profile-photo-section h3 {
@@ -130,6 +168,14 @@
   color: #333;
   font-size: 14px;
   box-shadow: none;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-control:hover {
+  border-color: #c9c9c9;
 }
 
 .form-control:disabled {
@@ -142,7 +188,7 @@
 .form-control:focus {
   border-color: #7601CB;
   background: #fff;
-  /* box-shadow: 0 0 0 0.15rem rgba(118, 1, 203, 0.08); */
+  box-shadow: 0 0 0 3px rgba(118, 1, 203, 0.08);
 }
 
 .password-wrapper {
@@ -163,10 +209,14 @@
   font-size: 16px;
   cursor: pointer;
   z-index: 2;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .password-wrapper i:hover {
   color: #7601CB;
+  transform: translateY(-50%) scale(1.08);
 }
 
 .profile-actions {
@@ -190,17 +240,33 @@
   gap: 8px;
   font-size: 13px;
   font-weight: 600;
-  transition: 0.2s;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .update-btn:hover {
   background: #6500ad;
   border-color: #6500ad;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(118, 1, 203, 0.2);
+}
+
+.update-btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .update-btn i {
   font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+.update-btn:hover i {
+  transform: scale(1.08);
 }
 
 @media (max-width: 1199px) {

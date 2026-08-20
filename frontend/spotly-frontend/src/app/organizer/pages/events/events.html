@@ -1,18 +1,15 @@
 <div class="events-page">
 
   <div class="page-header">
-
     <div>
       <h1>Events</h1>
       <p>Manager events</p>
     </div>
-
   </div>
 
   <section class="events-card">
 
     <div class="events-card-header">
-
       <div>
         <h2>All Events</h2>
         <span>{{ events.length }} Events</span>
@@ -24,11 +21,9 @@
         (click)="openAddForm()">
 
         <i class="bi bi-plus-lg"></i>
-
         Create Event
 
       </button>
-
     </div>
 
     @if (showForm) {
@@ -63,6 +58,25 @@
               class="form-control"
               [(ngModel)]="newEvent.title"
               placeholder="Enter event name">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Category</label>
+
+            <select
+              class="form-select"
+              [(ngModel)]="newEvent.category">
+
+              <option value="">Select category</option>
+              <option value="Conference">Conference</option>
+              <option value="Music">Music</option>
+              <option value="Business">Business</option>
+              <option value="Workshop">Workshop</option>
+              <option value="Sports">Sports</option>
+
+            </select>
 
           </div>
 
@@ -146,7 +160,6 @@
               (click)="addEvent()">
 
               <i class="bi bi-plus-lg"></i>
-
               Add Event
 
             </button>
@@ -159,7 +172,6 @@
               (click)="updateEvent()">
 
               <i class="bi bi-check-lg"></i>
-
               Update Event
 
             </button>
@@ -212,6 +224,7 @@
             <tr>
 
               <th>Event</th>
+              <th>Category</th>
               <th>Date</th>
               <th>Location</th>
               <th>Tickets Sold</th>
@@ -229,14 +242,12 @@
 
               <tr>
 
-                <td>
+                <td data-label="Event">
 
                   <div class="event-name">
 
                     <div class="event-icon">
-
                       <i class="bi bi-calendar-event"></i>
-
                     </div>
 
                     <span>
@@ -247,7 +258,15 @@
 
                 </td>
 
-                <td>
+                <td data-label="Category">
+
+                  <span class="event-category">
+                    {{ event.category }}
+                  </span>
+
+                </td>
+
+                <td data-label="Date">
 
                   <div class="event-date">
 
@@ -261,7 +280,7 @@
 
                 </td>
 
-                <td>
+                <td data-label="Location">
 
                   <div class="event-location">
 
@@ -275,7 +294,7 @@
 
                 </td>
 
-                <td>
+                <td data-label="Tickets Sold">
 
                   <span class="tickets-sold">
                     {{ event.ticketsSold }} / {{ event.totalTickets }}
@@ -283,16 +302,19 @@
 
                 </td>
 
-                <td>
+                <td data-label="Ticket Price">
 
                   <span class="ticket-price">
+
                     {{ event.ticketPrice | currency:'EGP':'':'1.2-2' }}
+
                     <small>EGP</small>
+
                   </span>
 
                 </td>
 
-                <td>
+                <td data-label="Status">
 
                   <span
                     class="status-badge"
@@ -305,7 +327,7 @@
 
                 </td>
 
-                <td>
+                <td data-label="Action">
 
                   <div class="action-buttons">
 
