@@ -1,22 +1,18 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
-// import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-// import { HttpClientModule } from '@angular/common/http';
-
+import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-eventmain',
-  imports: [CommonModule, FormsModule, 
-    // RouterLink,HttpClientModule
-  ],
+  standalone: true,
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './eventmain.html',
-  styleUrl: './eventmain.css'
+  styleUrls: ['./eventmain.css']
 })
-export class totalevent {
-
+export class totalevent implements OnInit {
   private router = inject(Router);
+  private route = inject(ActivatedRoute); 
 
   eventsList = [
     { id: 1, title: 'Acoustic Night', category: 'music', price: 250, date: '2026-09-14', image: 'image/1.jpg', desc: 'Enjoy beautiful acoustic performances.' },
@@ -30,18 +26,33 @@ export class totalevent {
   selectedCategory: string = 'all';
 
   ngOnInit(): void {
-    this.filteredEvents = this.eventsList;
+    const paramCategory = this.route.snapshot.queryParams['category'] || 
+                          this.route.parent?.snapshot.queryParams['category'];
+
+    if (paramCategory) {
+      this.selectedCategory = paramCategory.toLowerCase();
+    }
+
+    this.filterEvents();
+
+    this.route.queryParams.subscribe(params => {
+      if (params['category']) {
+        this.selectedCategory = params['category'].toLowerCase();
+        this.filterEvents();
+      }
+    });
   }
 
   filterEvents(): void {
     this.filteredEvents = this.eventsList.filter(event => {
-      const matchesCategory = this.selectedCategory === 'all' || event.category === this.selectedCategory;
+      const matchesCategory = this.selectedCategory === 'all' || 
+                              event.category.toLowerCase() === this.selectedCategory.toLowerCase();
       const matchesSearch = event.title.toLowerCase().includes(this.searchTerm.toLowerCase().trim());
       return matchesCategory && matchesSearch;
     });
   }
 
-goToDetails(eventId: number): void {
-  // هيوجه لصفحة التفاصيل مع تمرير الـ ID بتاع الأيفنت
-  this.router.navigate(['/eventdetails', eventId]);
-}}
+  goToDetails(eventId: number): void {
+    this.router.navigate(['/eventdetails', eventId]);
+  }
+}

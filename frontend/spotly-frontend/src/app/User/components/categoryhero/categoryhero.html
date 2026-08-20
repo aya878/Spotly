@@ -7,25 +7,25 @@
     <div class="category-wrapper">
       
       <div class="tickets-column">
-        <a href="events.html?category=music" class="ticket-card" data-category="music">
+        <a (click)="goToCategory('music')" class="ticket-card" data-category="music">
           <div class="ticket-cutout left"></div>
           <div class="ticket-content">
             <i class="fa-solid fa-music ticket-icon"></i>
-            <span class="ticket-title">Music</span>
+           <span class="ticket-title">Music</span>
           </div>
           <div class="ticket-cutout right"></div>
         </a>
 
-        <a href="events.html?category=sports" class="ticket-card" data-category="sports">
+        <a (click)="goToCategory('sports')" class="ticket-card" data-category="sports">
           <div class="ticket-cutout left"></div>
           <div class="ticket-content">
             <i class="fa-solid fa-futbol ticket-icon"></i>
-            <span class="ticket-title">Sports</span>
+         <span class="ticket-title">Sports</span>
           </div>
           <div class="ticket-cutout right"></div>
         </a>
 
-        <a href="events.html?category=art" class="ticket-card" data-category="art">
+        <a (click)="goToCategory('art')" class="ticket-card" data-category="art">
           <div class="ticket-cutout left"></div>
           <div class="ticket-content">
             <i class="fa-solid fa-masks-theater ticket-icon"></i>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="tickets-column">
-        <a href="events.html?category=technology" class="ticket-card" data-category="technology">
+        <a (click)="goToCategory('technology')" class="ticket-card" data-category="technology">
           <div class="ticket-cutout left"></div>
           <div class="ticket-content">
             <i class="fa-solid fa-laptop-code ticket-icon"></i>
@@ -49,7 +49,7 @@
           <div class="ticket-cutout right"></div>
         </a>
 
-        <a href="events.html?category=culture" class="ticket-card" data-category="culture">
+        <a (click)="goToCategory('business')" class="ticket-card" data-category="culture">
           <div class="ticket-cutout left"></div>
           <div class="ticket-content">
         <i class="fa-solid fa-chart-line ticket-icon"></i>
@@ -58,7 +58,7 @@
           <div class="ticket-cutout right"></div>
         </a>
 
-        <a href="events.html?category=business" class="ticket-card" data-category="business">
+        <a (click)="goToCategory('workshop')" class="ticket-card" data-category="business">
           <div class="ticket-cutout left"></div>
           <div class="ticket-content">
             <i class="fa-solid fa-briefcase ticket-icon"></i>
