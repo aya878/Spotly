@@ -1,0 +1,28 @@
+.details-container {
+        margin-top: 100px;
+        margin-bottom: 50px;
+      }
+      .event-banner {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .event-info-box {
+        background: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+      .price-tag {
+        color: #7601CB;
+        font-size: 28px;
+        font-weight: bold;
+      }
+       .container {
+    width: 90%;
+    margin: auto;
+}
+.details {
+    margin-block: 200px;
+}

@@ -1,0 +1,477 @@
+ :host {
+    min-height: 100vh;
+  background: radial-gradient(circle at center, rgba(155, 34, 236, 0.85), rgba(66, 0, 117, 0.95)),
+              url('/image/categorybg.jpg') center/cover no-repeat fixed;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.profilecontainer {
+    
+  width: 90%;
+  max-width: 1100px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 50px;
+}
+
+
+.profile-header-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  color: #333;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.profile-cover {
+  height: 140px;
+  background: linear-gradient(135deg, #7601CB, #9b22ec);
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: -60px auto 15px;
+  z-index: 10; 
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  object-fit: cover;
+  background-color: #eee;
+  display: block;
+}
+
+.edit-avatar-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #7601CB;
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.edit-avatar-btn:hover {
+  background: #9b22ec;
+  transform: scale(1.1);
+}
+
+.user-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #222;
+}
+
+.user-email {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.badge-role {
+  background: #f0e5fc;
+  color: #7601CB;
+  font-weight: 700;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: #7601CB;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #9b22ec;
+  box-shadow: 0 5px 15px rgba(118, 1, 203, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #7601CB;
+  color: #7601CB;
+}
+
+.btn-outline:hover {
+  background: #f0e5fc;
+}
+
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #333;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  background: #f0e5fc;
+  color: #7601CB;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.stat-details h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #222;
+}
+
+.stat-details p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.profile-content {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
+}
+
+.content-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  color: #333;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  color: #7601CB;
+}
+
+.view-all {
+  color: #7601CB;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.tickets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mini-ticket {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fbf8ff;
+  border: 1px dashed #7601CB;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.ticket-date {
+  background: #7601CB;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-width: 50px;
+}
+
+.ticket-date .day {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.ticket-date .month {
+  font-size: 0.7rem;
+}
+
+.ticket-details h4 {
+  font-size: 0.95rem;
+  color: #222;
+}
+
+.ticket-details p {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.btn-sm {
+  background: #7601CB;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.btn-sm:hover {
+  background: #9b22ec;
+}
+
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.info-list li:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #666;
+  font-weight: 600;
+}
+
+.info-value {
+  color: #222;
+  font-weight: 700;
+}
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: #ffffff;
+  width: 90%;
+  max-width: 480px;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  color: #333;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-card {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.modal-header h3 {
+  color: #7601CB;
+  font-size: 1.3rem;
+}
+
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close-modal-btn:hover {
+  color: #333;
+}
+
+.modal-avatar-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-avatar-wrapper {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid #7601CB;
+}
+
+.modal-avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(118, 1, 203, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-avatar-wrapper:hover .avatar-overlay {
+  opacity: 1;
+}
+
+.avatar-hint {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #7601CB;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+
+@media (max-width: 992px) {
+  .profile-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    width: 50%;
+  }
+
+  .listt {
+    width: 100%;
+    order: 3;
+    margin-top: 10px;
+  }
+
+  .icon {
+    width: 50%;
+  }
+
+  .mini-ticket {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .btn-sm {
+    align-self: flex-end;
+  }
+}

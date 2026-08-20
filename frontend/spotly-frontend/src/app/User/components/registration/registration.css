@@ -1,0 +1,565 @@
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #faf7ff, #eee3ff);
+            color: #15152b;
+        }
+        a{
+            text-decoration: none !important;
+        }
+
+    .container {
+    width: 95%;
+    margin: auto;
+}
+
+        .signup-page {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            padding: 30px 50px;
+        }
+
+
+
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .circle-one {
+            width: 80px;
+            height: 80px;
+            background: rgba(118, 1, 203, 0.10);
+            top: 100px;
+            right: 70px;
+        }
+
+        .circle-two {
+            width: 50px;
+            height: 50px;
+            background: rgba(118, 1, 203, 0.08);
+            top: 50px;
+            right:  400px;
+        }
+
+
+     .welcom-img img{
+      width: 400px;
+
+     }
+
+        .logo {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            font-size: 50px;
+            font-weight: bold;
+            color: #15152b;
+        }
+
+        .logo-icon img {
+            width: 70px;
+            height: 70px;
+            margin-right: 10px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .logo span {
+            color: #7601cb;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            top: -70px;
+            max-width: 1200px;
+            margin: 25px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            width: 48%;
+        }
+        .hero .welcom-img img {
+            width: 110%;
+        }
+        
+
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.05;
+
+            margin-bottom: 18px;
+        }
+
+        .hero-text h1 span {
+            color: #7601cb;
+        }
+
+        .hero-text p {
+            color: #55556d;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 480px;
+        }
+
+
+        .signup-card {
+            position: relative;
+            z-index: 5;
+           top: -400px;
+            width: 100%;
+            max-width: 1050px;
+            margin: 20px auto 40px;
+            padding: 35px 40px;
+            background: rgba(255,255,255,0.88);
+            border: 1px solid #e6dafa;
+            border-radius: 24px;
+            box-shadow:0 20px 50px rgba(80, 20, 120, 0.12);
+            backdrop-filter: blur(10px);
+        }
+
+        .card-title {
+            margin-bottom: 25px;
+        }
+
+        .card-title h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .card-title p {
+            color: #66667b;
+            font-size: 14px;
+        }
+
+
+        .form-section-title {
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 18px;
+
+            color: #7601cb;
+
+            font-weight: bold;
+        }
+        .form-section-title i {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    display: inline-block;
+    flex-shrink: 0; 
+}
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-left: 40px; 
+  padding-right: 40px; 
+  box-sizing: border-box;
+}
+
+        .form-row {
+            display: flex;
+            gap: 22px;
+
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            width: 50%;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+
+            height: 48px;
+
+            border: 1px solid #ddd5eb;
+
+            border-radius: 10px;
+
+            padding: 0 35px;
+
+            font-size: 14px;
+
+            outline: none;
+
+            background: white;
+
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .form-group input:focus {
+            border-color: #7601cb;
+
+            box-shadow:
+                0 0 0 3px rgba(118,1,203,0.08);
+        }
+        .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.usee {
+  position: absolute;
+  left: 14px;
+  top: 65%;
+  transform: translateY(-50%);
+  z-index: 5;
+  margin-right: 5px;
+  color: #66667b;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+        .lock{
+            position: absolute;
+            right: 10px;
+            margin-top: 13px;
+              font-family: "Font Awesome 6 Free" !important;
+
+            color: #66667b;
+        }
+
+        .lockk {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  color: #66667b;
+  cursor: pointer;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 400 !important;
+}
+  
+
+
+
+
+        .role-title {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        .role-title i{
+              font-family: "Font Awesome 6 Free" !important;
+
+        }
+
+        .role-title h3 {
+            color: #7601cb;
+
+            font-size: 16px;
+
+            margin-bottom: 5px;
+        }
+
+        .role-title p {
+            color: #77778b;
+            font-size: 13px;
+        }
+
+        .roles {
+            display: flex;
+            gap: 18px;
+
+            margin-bottom: 25px;
+        }
+
+        .role-card {
+            position: relative;
+
+            width:50%;
+
+            min-height: 145px;
+
+            padding: 20px;
+
+            border: 1px solid #ddd5eb;
+
+            border-radius: 14px;
+
+            background: white;
+
+            cursor: pointer;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .role-card:hover {
+            border-color: #7601cb;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(118,1,203,0.10);
+        }
+
+        .role-card.active {
+            border: 2px solid #7601cb;
+
+            background: #fbf8ff;
+
+            box-shadow:
+                0 10px 30px rgba(118,1,203,0.12);
+        }
+
+        .role-radio {
+            position: absolute;
+
+            right: 15px;
+            top: 15px;
+
+            width: 19px;
+            height: 19px;
+
+            border: 1px solid #999;
+
+            border-radius: 50%;
+        }
+
+        .role-card.active .role-radio {
+            border-color: #7601cb;
+
+            background: #7601cb;
+        }
+
+        .role-card.active .role-radio::after {
+            content: "✓";
+
+            color: white;
+
+            font-size: 12px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            height: 100%;
+        }
+
+        .role-icon {
+            width: 52px;
+            height: 52px;
+
+            margin: 0 auto 10px;
+
+            border-radius: 50%;
+
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #7601cb;
+
+            background: #f0e4ff;
+
+            font-size: 22px;
+        }
+
+        .role-card h4 {
+            font-size: 16px;
+
+            margin-bottom: 6px;
+        }
+
+        .role-card p {
+            color: #77778b;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+.role-icon i{
+      font-family: "Font Awesome 6 Free" !important;
+
+}
+
+ 
+
+        .create-btn {
+            width: 100%;
+
+            height: 50px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                90deg,
+                #7601cb,
+                #a63cff
+            );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .create-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px rgba(118,1,203,0.3);
+        }
+        .or {
+            text-align: center;
+            margin-block: 15px;
+        }
+        .or::after{
+            content: " ";
+            width: 20px;
+            height: 2px;
+            background-color: #55556d;
+            top:100px;
+            right: 20px;
+        }
+        .ico {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ddd5ebc3;
+            padding-inline: 45px;
+            padding-block: 5px;
+            border-radius: 10px;
+            color: #000;
+            transition: all .3s;
+        }
+        .ico:hover{
+            transform: translate(-4px,-4px);
+        }
+        .ico img{
+            width: 30px;
+            margin-right: 5px;
+        }
+        .soci {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+        .soci .ico h3{
+            font-size: 16px !important;
+            font-weight: 800 !important;
+        }
+        .ico.face img{
+            width: 45px;
+
+        }
+
+
+   
+
+        .login-link {
+            text-align: center;
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+            color: #66667b;
+        }
+
+        .login-link a {
+            color: #7601cb;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+
+          @media (max-width: 800px) {
+
+            .signup-page {
+                padding: 25px 15px;
+            }
+
+            .hero {
+                display: block;
+            }
+
+            .hero-text {
+                width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .illustration {
+                margin: 20px auto;
+            }
+
+            .signup-card {
+                padding: 25px 20px;
+            }
+
+            .form-row {
+                display: block;
+            }
+
+            .form-group {
+                width: 100%;
+                margin-bottom: 18px;
+            }
+
+            .roles {
+                display: block;
+            }
+
+            .role-card {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+        }

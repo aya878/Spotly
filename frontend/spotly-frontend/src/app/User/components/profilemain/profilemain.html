@@ -1,0 +1,134 @@
+<!-- Profile Section -->
+  <main class="profilecontainer">
+    
+    <section class="profile-header-card">
+      <div class="profile-cover"></div>
+      
+      <div class="profile-avatar-wrapper" id="avatarClickable" style="cursor: pointer;">
+        <img src="" alt="" class="profile-avatar" id="userAvatarImg">
+        <button type="button" class="edit-avatar-btn" title="Change Photo">
+          <i class="fa-solid fa-camera"></i>
+        </button>
+        <input type="file" id="avatarFileInput" accept="image/*" style="display: none;">
+      </div>
+      
+      <div class="profile-info">
+        <h2 class="user-name" id="userName">Loading...</h2>
+        <p class="user-email" id="userEmail">Loading...</p>
+        <span class="badge-role" id="userRole"><i class="fa-solid fa-ticket"></i> Event Explorer</span>
+      </div>
+
+      <div class="profile-actions">
+        <button class="btn btn-primary" id="editProfileBtn"><i class="fa-solid fa-user-pen"></i> Edit Profile</button>
+        <button class="btn btn-outline"><i class="fa-solid fa-gear"></i> Settings</button>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-ticket"></i></div>
+        <div class="stat-details">
+          <h3 id="statBooked">0</h3>
+          <p>Tickets Booked</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-heart"></i></div>
+        <div class="stat-details">
+          <h3 id="statSaved">0</h3>
+          <p>Saved Events</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="stat-details">
+          <h3 id="statReviews">0</h3>
+          <p>Reviews Left</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-content">
+      
+      <!-- Upcoming Tickets -->
+      <div class="content-card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-calendar-check"></i> My Upcoming Tickets</h3>
+          <a href="#" class="view-all">View All</a>
+        </div>
+        
+        <div class="tickets-list" id="ticketsListContainer">
+        </div>
+      </div>
+
+      <!-- Account Details & Preferences -->
+      <div class="content-card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-sliders"></i> Account Info</h3>
+        </div>
+
+        <ul class="info-list">
+          <li>
+            <span class="info-label"><i class="fa-solid fa-phone"></i> Phone:</span>
+            <span class="info-value" id="userPhone">--</span>
+          </li>
+          <li>
+            <span class="info-label"><i class="fa-solid fa-city"></i> City:</span>
+            <span class="info-value" id="userCity">--</span>
+          </li>
+          <li>
+            <span class="info-label"><i class="fa-solid fa-heart"></i> Favorite Category:</span>
+            <span class="info-value" id="userFavCategory">--</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+
+  <div class="modal-overlay" id="editProfileModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-user-pen"></i> Edit Profile</h3>
+        <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+      </div>
+
+      <form id="editProfileForm" class="modal-body">
+        <!-- Change Avatar Preview -->
+        <div class="modal-avatar-section">
+          <div class="modal-avatar-wrapper" id="modalAvatarClickable">
+            <img src="user-avatar.png" alt="Avatar Preview" id="modalAvatarPreview">
+            <div class="avatar-overlay">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+          </div>
+          <input type="file" id="modalAvatarInput" accept="image/*" style="display: none;">
+          <p class="avatar-hint">Click image to change photo</p>
+        </div>
+
+        <!-- Input Fields -->
+        <div class="form-group">
+          <label for="editNameInput">Full Name</label>
+          <input type="text" id="editNameInput" required placeholder="Enter full name">
+        </div>
+
+        <div class="form-group">
+          <label for="editPhoneInput">Phone Number</label>
+          <input type="text" id="editPhoneInput" placeholder="Enter phone number">
+        </div>
+
+        <div class="form-group">
+          <label for="editCityInput">City</label>
+          <input type="text" id="editCityInput" placeholder="Enter city">
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancelModalBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+    </main>
