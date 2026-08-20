@@ -22,7 +22,6 @@ export class details implements OnInit {
   ];
 
   ngOnInit(): void {
-    // قراءة الـ ID سواء من الرابط المباشر أو من الصفحة الأب
     const paramId = this.route.snapshot.paramMap.get('id') || this.route.parent?.snapshot.paramMap.get('id');
     const eventId = Number(paramId);
 
