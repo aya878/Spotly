@@ -1,0 +1,179 @@
+<div class="profile-page">
+
+  <div class="profile-header">
+
+      <h1>Profile</h1>
+
+  </div>
+
+
+  <div class="profile-content">
+
+    <section class="profile-card">
+
+      <div class="profile-card-header">
+
+        <h2>
+          Personal Information
+        </h2>
+
+      </div>
+
+
+      <div class="profile-main">
+
+
+        <div class="profile-photo-section">
+
+          <div class="profile-photo">
+
+            <img
+              src="/images/profile/organizer.png"
+              [alt]="profile.name"
+            >
+
+            <div class="camera-btn">
+
+              <i class="bi bi-camera"></i>
+
+            </div>
+
+          </div>
+
+
+          <h3>
+            {{ profile.name }}
+          </h3>
+
+          <span>
+            Event Organizer
+          </span>
+
+        </div>
+
+
+        <div class="profile-form row g-3">
+
+
+          <div class="form-group col-md-6">
+
+            <label class="form-label">
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="profile.name"
+              [disabled]="!isEditing"
+            >
+
+          </div>
+
+
+          <div class="form-group col-md-6">
+
+            <label class="form-label">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              class="form-control"
+              [(ngModel)]="profile.email"
+              [disabled]="!isEditing"
+            >
+
+          </div>
+
+
+          <div class="form-group col-md-6">
+
+            <label class="form-label">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              class="form-control"
+              [(ngModel)]="profile.phone"
+              [disabled]="!isEditing"
+            >
+
+          </div>
+
+
+          <div class="form-group col-md-6">
+
+            <label class="form-label">
+              Location
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="profile.location"
+              [disabled]="!isEditing"
+            >
+
+          </div>
+
+
+          <div class="form-group col-md-6">
+
+            <label class="form-label">
+              Password
+            </label>
+
+            <div class="password-wrapper">
+
+              <input
+                [type]="passwordVisible ? 'text' : 'password'"
+                class="form-control"
+                [(ngModel)]="profile.password"
+                [disabled]="!isEditing"
+              >
+
+              <i
+                class="bi"
+                [class.bi-eye]="!passwordVisible"
+                [class.bi-eye-slash]="passwordVisible"
+                (click)="togglePassword()"
+              ></i>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <div class="profile-actions">
+
+        <button
+          type="button"
+          class="btn update-btn"
+          (click)="updateProfile()"
+        >
+
+          <i
+            class="bi"
+            [class.bi-pencil]="!isEditing"
+            [class.bi-check-lg]="isEditing"
+          ></i>
+
+          {{ isEditing ? 'Save Changes' : 'Update Profile' }}
+
+        </button>
+
+      </div>
+
+
+    </section>
+
+  </div>
+
+</div>

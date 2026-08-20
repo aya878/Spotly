@@ -1,0 +1,21 @@
+<div class="layout">
+
+  <app-sidebar [isOpen]="sidebarOpen"></app-sidebar>
+
+  <div
+    class="sidebar-overlay"
+    [class.show]="sidebarOpen"
+    (click)="closeSidebar()">
+  </div>
+
+  <div class="main">
+
+    <app-navbar (menuClick)="toggleSidebar()"></app-navbar>
+
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+
+  </div>
+
+</div>

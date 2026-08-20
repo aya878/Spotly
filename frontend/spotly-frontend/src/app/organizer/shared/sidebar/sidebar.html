@@ -1,0 +1,93 @@
+<aside class="sidebar" [class.open]="isOpen">
+
+  <div class="brand">
+
+    <img
+      src="/images/spotly-logo-white.png"
+      alt="Spotly"
+      width="45"
+      height="45">
+
+    <div>
+      <h2>Spotly</h2>
+      <span>Organizer</span>
+    </div>
+
+  </div>
+
+  <nav class="menu">
+
+    <a
+      routerLink="/organizer/dashboard"
+      routerLinkActive="active"
+      class="menu-item">
+
+      <i class="bi bi-grid"></i>
+      <span>Dashboard</span>
+
+    </a>
+
+    <a
+      routerLink="/organizer/events"
+      routerLinkActive="active"
+      class="menu-item">
+
+      <i class="bi bi-calendar-event"></i>
+      <span>Events</span>
+
+    </a>
+
+    <a
+      routerLink="/organizer/bookings"
+      routerLinkActive="active"
+      class="menu-item">
+
+      <i class="bi bi-ticket-perforated"></i>
+      <span>Bookings</span>
+
+    </a>
+
+    
+
+    <a
+      routerLink="/organizer/earnings"
+      routerLinkActive="active"
+      class="menu-item">
+
+      <i class="bi bi-wallet2"></i>
+      <span>Earnings</span>
+
+    </a>
+
+    <a
+      routerLink="/organizer/profile"
+      routerLinkActive="active"
+      class="menu-item">
+
+      <i class="bi bi-person"></i>
+      <span>Profile</span>
+
+    </a>
+
+  </nav>
+
+  <a
+    routerLink="/organizer/profile"
+    class="organizer-info">
+
+    <div class="avatar">
+
+      <img
+        [src]="profile.image"
+        [alt]="profile.name">
+
+    </div>
+
+    <div class="organizer-details">
+      <strong>{{ profile.name }}</strong>
+      <small>{{ profile.email }}</small>
+    </div>
+
+  </a>
+
+</aside>

@@ -1,0 +1,167 @@
+<div class="bookings-page">
+
+  <div class="page-header">
+
+    <div>
+      <h1>Bookings</h1>
+      <p>Manage your event bookings</p>
+    </div>
+
+  </div>
+
+  <section class="bookings-card">
+
+    <div class="bookings-header">
+
+      <div>
+        <h2>Bookings</h2>
+        <span>{{ bookings.length }} Bookings</span>
+      </div>
+
+    </div>
+
+    @if (loading) {
+
+      <div class="loading-state">
+
+        <div
+          class="spinner-border"
+          role="status">
+        </div>
+
+        <span>Loading bookings...</span>
+
+      </div>
+
+    }
+
+    @if (!loading && bookings.length === 0) {
+
+      <div class="empty-state">
+
+        <i class="bi bi-ticket-perforated"></i>
+
+        <h3>No Bookings Available</h3>
+
+        <p>There are no bookings to display.</p>
+
+      </div>
+
+    }
+
+    @if (!loading && bookings.length > 0) {
+
+      <div class="table-responsive">
+
+        <table class="table bookings-table align-middle">
+
+          <thead>
+
+            <tr>
+              <th>User</th>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Tickets</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            @for (booking of bookings; track booking.id) {
+
+              <tr>
+
+                <td>
+
+                  <div class="booking-user">
+
+                    <div class="table-icon">
+                      <i class="bi bi-person"></i>
+                    </div>
+
+                    <span>
+                      {{ booking.user }}
+                    </span>
+
+                  </div>
+
+                </td>
+
+                <td>
+
+                  <div class="booking-event">
+
+                    <div class="table-icon">
+                      <i class="bi bi-calendar-event"></i>
+                    </div>
+
+                    <span>
+                      {{ booking.event }}
+                    </span>
+
+                  </div>
+
+                </td>
+
+                <td>
+
+                  <div class="booking-date">
+
+                    <i class="bi bi-calendar3"></i>
+
+                    <span>
+                      {{ booking.date }}
+                    </span>
+
+                  </div>
+
+                </td>
+
+                <td>
+
+                  <span class="tickets-count">
+                    {{ booking.tickets }}
+                  </span>
+
+                </td>
+
+                <td>
+
+                  <span class="amount">
+                    {{ booking.amount | currency:'EGP':'':'1.2-2' }}
+                    <small>EGP</small>
+                  </span>
+
+                </td>
+
+                <td>
+
+                  <span
+                    class="status-badge"
+                    [class.confirmed]="booking.status === 'Confirmed'"
+                    [class.pending]="booking.status === 'Pending'">
+
+                    {{ booking.status }}
+
+                  </span>
+
+                </td>
+
+              </tr>
+
+            }
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    }
+
+  </section>
+
+</div>

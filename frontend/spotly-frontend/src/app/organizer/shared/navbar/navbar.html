@@ -1,0 +1,40 @@
+<header class="navbar">
+
+  <div class="navbar-left">
+
+    <button
+      class="menu-btn"
+      type="button"
+      (click)="toggleMenu()">
+
+      <i class="bi bi-list"></i>
+
+    </button>
+
+  </div>
+
+  <div class="navbar-title">
+    <h2>{{ pageTitle }}</h2>
+  </div>
+
+  <div class="navbar-right">
+
+    <button class="icon-btn">
+      <i class="bi bi-bell"></i>
+    </button>
+
+    <button class="icon-btn">
+      <i class="bi bi-chat-dots"></i>
+    </button>
+
+    <a
+      routerLink="/organizer/profile"
+      class="profile">
+      <img
+        [src]="profile.image"
+        [alt]="profile.name">
+    </a>
+
+  </div>
+
+</header>

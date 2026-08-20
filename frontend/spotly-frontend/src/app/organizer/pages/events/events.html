@@ -1,0 +1,348 @@
+<div class="events-page">
+
+  <div class="page-header">
+
+    <div>
+      <h1>Events</h1>
+      <p>Manager events</p>
+    </div>
+
+  </div>
+
+  <section class="events-card">
+
+    <div class="events-card-header">
+
+      <div>
+        <h2>All Events</h2>
+        <span>{{ events.length }} Events</span>
+      </div>
+
+      <button
+        type="button"
+        class="btn add-event-btn"
+        (click)="openAddForm()">
+
+        <i class="bi bi-plus-lg"></i>
+
+        Create Event
+
+      </button>
+
+    </div>
+
+    @if (showForm) {
+
+      <div class="add-event-form">
+
+        <div class="form-header">
+
+          <h3>
+            {{ editingId === null ? 'Add New Event' : 'Update Event' }}
+          </h3>
+
+          <button
+            type="button"
+            class="btn close-btn"
+            (click)="closeForm()">
+
+            <i class="bi bi-x-lg"></i>
+
+          </button>
+
+        </div>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label>Event</label>
+
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="newEvent.title"
+              placeholder="Enter event name">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Date</label>
+
+            <input
+              type="date"
+              class="form-control"
+              [(ngModel)]="newEvent.date">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Location</label>
+
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="newEvent.location"
+              placeholder="Enter location">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Tickets Sold</label>
+
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="newEvent.ticketsSold"
+              min="0">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Total Tickets</label>
+
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="newEvent.totalTickets"
+              min="0">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Ticket Price</label>
+
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="newEvent.ticketPrice"
+              min="0">
+
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+
+          <button
+            type="button"
+            class="btn cancel-btn"
+            (click)="closeForm()">
+
+            Cancel
+
+          </button>
+
+          @if (editingId === null) {
+
+            <button
+              type="button"
+              class="btn save-event-btn"
+              (click)="addEvent()">
+
+              <i class="bi bi-plus-lg"></i>
+
+              Add Event
+
+            </button>
+
+          } @else {
+
+            <button
+              type="button"
+              class="btn save-event-btn"
+              (click)="updateEvent()">
+
+              <i class="bi bi-check-lg"></i>
+
+              Update Event
+
+            </button>
+
+          }
+
+        </div>
+
+      </div>
+
+    }
+
+    @if (loading) {
+
+      <div class="loading-state">
+
+        <div
+          class="spinner-border"
+          role="status">
+        </div>
+
+        <span>Loading events...</span>
+
+      </div>
+
+    }
+
+    @if (!loading && events.length === 0) {
+
+      <div class="empty-state">
+
+        <i class="bi bi-calendar-x"></i>
+
+        <h3>No Events Available</h3>
+
+        <p>There are no events to display.</p>
+
+      </div>
+
+    }
+
+    @if (!loading && events.length > 0) {
+
+      <div class="table-responsive">
+
+        <table class="table events-table align-middle">
+
+          <thead>
+
+            <tr>
+
+              <th>Event</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Tickets Sold</th>
+              <th>Ticket Price</th>
+              <th>Status</th>
+              <th>Action</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            @for (event of events; track event.id) {
+
+              <tr>
+
+                <td>
+
+                  <div class="event-name">
+
+                    <div class="event-icon">
+
+                      <i class="bi bi-calendar-event"></i>
+
+                    </div>
+
+                    <span>
+                      {{ event.title }}
+                    </span>
+
+                  </div>
+
+                </td>
+
+                <td>
+
+                  <div class="event-date">
+
+                    <i class="bi bi-calendar3"></i>
+
+                    <span>
+                      {{ event.date }}
+                    </span>
+
+                  </div>
+
+                </td>
+
+                <td>
+
+                  <div class="event-location">
+
+                    <i class="bi bi-geo-alt"></i>
+
+                    <span>
+                      {{ event.location }}
+                    </span>
+
+                  </div>
+
+                </td>
+
+                <td>
+
+                  <span class="tickets-sold">
+                    {{ event.ticketsSold }} / {{ event.totalTickets }}
+                  </span>
+
+                </td>
+
+                <td>
+
+                  <span class="ticket-price">
+                    {{ event.ticketPrice | currency:'EGP':'':'1.2-2' }}
+                    <small>EGP</small>
+                  </span>
+
+                </td>
+
+                <td>
+
+                  <span
+                    class="status-badge"
+                    [class.upcoming]="event.status === 'Upcoming'"
+                    [class.past]="event.status === 'Past'">
+
+                    {{ event.status }}
+
+                  </span>
+
+                </td>
+
+                <td>
+
+                  <div class="action-buttons">
+
+                    <button
+                      type="button"
+                      class="btn action-btn edit-btn"
+                      (click)="startEdit(event)">
+
+                      <i class="bi bi-pencil"></i>
+
+                    </button>
+
+                    <button
+                      type="button"
+                      class="btn action-btn delete-btn"
+                      (click)="deleteEvent(event.id)">
+
+                      <i class="bi bi-trash"></i>
+
+                    </button>
+
+                  </div>
+
+                </td>
+
+              </tr>
+
+            }
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    }
+
+  </section>
+
+</div>

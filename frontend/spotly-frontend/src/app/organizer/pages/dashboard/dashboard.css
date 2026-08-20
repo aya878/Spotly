@@ -1,0 +1,551 @@
+.dashboard {
+  width: 100%;
+  height: calc(100vh - 70px);
+  padding: 22px 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  min-width: 0;
+  min-height: 125px;
+  padding: 22px;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background-color: #f1e1ff;
+  color: #7601CB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.stat-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-content span {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stat-content strong {
+  margin-top: 5px;
+  color: #222;
+  font-size: 27px;
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.stat-content strong small {
+  color: #777;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.stat-content small {
+  margin-top: 5px;
+  color: #35a66f;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.dashboard-card {
+  min-width: 0;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.card-header a {
+  flex-shrink: 0;
+  color: #7601CB;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.upcoming-events {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-row {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.event-row:last-child {
+  border-bottom: none;
+}
+
+.event-image {
+  width: 55px;
+  height: 55px;
+  border-radius: 9px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.event-info h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-meta {
+  display: flex;
+  gap: 14px;
+  color: #888;
+  font-size: 12px;
+}
+
+.event-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.tickets {
+  min-width: 70px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  background-color: #f3e5ff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.tickets strong {
+  color: #7601CB;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tickets span {
+  margin-top: 2px;
+  color: #9a65bb;
+  font-size: 9px;
+}
+
+.bookings {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-row {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.booking-row:last-child {
+  border-bottom: none;
+}
+
+.customer-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.customer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booking-info {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-info h3 {
+  margin: 0 0 3px;
+  color: #222;
+  font-size: 14px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.booking-info p {
+  margin: 0 0 4px;
+  color: #666;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.booking-info span {
+  color: #999;
+  font-size: 11px;
+}
+
+.booking-price {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.booking-price span {
+  color: #888;
+  font-size: 11px;
+}
+
+.booking-price strong {
+  color: #7601CB;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.quick-actions {
+  width: 100%;
+  min-width: 0;
+  min-height: 105px;
+  height: auto;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px 22px 28px;
+  box-sizing: border-box;
+}
+
+.quick-actions .card-header {
+  margin-bottom: 10px;
+}
+
+.actions {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.action-btn {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  color: #555;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.action-btn:hover {
+  border-color: #7601CB;
+  color: #7601CB;
+}
+
+.action-btn.primary {
+  background-color: #7601CB;
+  border-color: #7601CB;
+  color: white;
+}
+
+.action-btn.primary:hover {
+  background-color: #6500ad;
+}
+
+@media (max-width: 1199px) {
+  .dashboard {
+    padding: 22px 24px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 991px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .stat-content strong {
+    font-size: 24px;
+  }
+
+  .dashboard-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard {
+    height: calc(100vh - 70px);
+    padding: 18px 16px 24px;
+  }
+
+  .page-header {
+    margin-bottom: 18px;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    min-height: 100px;
+    padding: 17px;
+  }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .stat-content strong {
+    font-size: 23px;
+  }
+
+  .dashboard-content {
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .dashboard-card {
+    padding: 15px;
+  }
+
+  .card-header h2 {
+    font-size: 16px;
+  }
+
+  .event-row {
+    gap: 10px;
+  }
+
+  .event-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  .event-info h3 {
+    font-size: 13px;
+  }
+
+  .event-meta {
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .tickets {
+    min-width: 62px;
+    padding: 7px 6px;
+  }
+
+  .tickets strong {
+    font-size: 11px;
+  }
+
+  .tickets span {
+    font-size: 8px;
+  }
+
+  .booking-row {
+    gap: 10px;
+  }
+
+  .customer-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .booking-info h3 {
+    font-size: 13px;
+  }
+
+  .booking-price strong {
+    font-size: 13px;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .quick-actions {
+    padding: 15px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 16px 12px 20px;
+  }
+
+  .stat-card {
+    min-height: 90px;
+    padding: 15px;
+  }
+
+  .stat-content span {
+    font-size: 13px;
+  }
+
+  .stat-content strong {
+    font-size: 21px;
+  }
+
+  .dashboard-card {
+    padding: 13px;
+  }
+
+  .card-header {
+    gap: 10px;
+  }
+
+  .card-header h2 {
+    font-size: 15px;
+  }
+
+  .card-header a {
+    font-size: 12px;
+  }
+
+  .event-row {
+    align-items: flex-start;
+  }
+
+  .event-info {
+    padding-top: 2px;
+  }
+
+  .tickets {
+    min-width: 58px;
+  }
+
+  .booking-price span {
+    font-size: 10px;
+  }
+
+  .booking-price strong {
+    font-size: 12px;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .quick-actions {
+    padding: 15px;
+    flex-shrink: 0;
+  }
+}

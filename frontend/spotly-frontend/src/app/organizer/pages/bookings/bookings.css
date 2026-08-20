@@ -1,0 +1,298 @@
+.bookings-page {
+  width: 100%;
+  height: calc(100vh - 70px);
+  padding: 22px 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+}
+
+.page-header p {
+  margin: 6px 0 0;
+  color: #888;
+  font-size: 13px;
+}
+
+.bookings-card {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bookings-header {
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.bookings-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.bookings-header span {
+  display: block;
+  margin-top: 5px;
+  color: #888;
+  font-size: 12px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.bookings-table {
+  width: 100%;
+  min-width: 850px;
+  margin: 0;
+}
+
+.bookings-table thead th {
+  padding: 15px 18px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #eee;
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.bookings-table tbody td {
+  padding: 15px 18px;
+  border-bottom: 1px solid #eee;
+  color: #555;
+  font-size: 13px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.bookings-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.bookings-table tbody tr:hover {
+  background-color: #fcf9ff;
+}
+
+.booking-user,
+.booking-event {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background-color: #f1e1ff;
+  color: #7601CB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.table-icon i {
+  font-size: 15px;
+}
+
+.booking-user span,
+.booking-event span {
+  color: #333;
+  font-weight: 500;
+}
+
+.booking-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.booking-date i {
+  color: #7601CB;
+  font-size: 14px;
+}
+
+.tickets-count {
+  color: #555;
+  font-weight: 600;
+}
+
+.amount {
+  color: #7601CB;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 78px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status-badge.confirmed {
+  background-color: #e8f7ef;
+  color: #29945f;
+}
+
+.status-badge.pending {
+  background-color: #fff4dc;
+  color: #b87900;
+}
+
+.loading-state {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #888;
+  font-size: 13px;
+}
+
+.loading-state .spinner-border {
+  width: 20px;
+  height: 20px;
+  color: #7601CB;
+}
+
+.empty-state {
+  min-height: 250px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.empty-state i {
+  margin-bottom: 12px;
+  color: #7601CB;
+  font-size: 35px;
+}
+
+.empty-state h3 {
+  margin: 0 0 6px;
+  color: #333;
+  font-size: 17px;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #888;
+  font-size: 13px;
+}
+
+@media (max-width: 1199px) {
+
+  .bookings-page {
+    padding: 22px 24px;
+  }
+
+}
+
+@media (max-width: 991px) {
+
+  .bookings-page {
+    padding: 20px;
+  }
+
+  .bookings-header {
+    padding: 18px;
+  }
+
+  .bookings-table thead th,
+  .bookings-table tbody td {
+    padding: 14px 15px;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .bookings-page {
+    height: calc(100vh - 70px);
+    padding: 18px 16px 24px;
+  }
+
+  .page-header {
+    margin-bottom: 18px;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .page-header p {
+    font-size: 12px;
+  }
+
+  .bookings-header {
+    padding: 16px;
+  }
+
+  .bookings-header h2 {
+    font-size: 16px;
+  }
+
+  .bookings-table {
+    min-width: 850px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .bookings-page {
+    padding: 16px 12px 20px;
+  }
+
+  .bookings-header {
+    padding: 15px;
+  }
+
+  .bookings-header h2 {
+    font-size: 15px;
+  }
+
+  .bookings-header span {
+    font-size: 11px;
+  }
+
+  .bookings-table {
+    min-width: 850px;
+  }
+
+  .bookings-table thead th,
+  .bookings-table tbody td {
+    padding: 13px 14px;
+  }
+
+}

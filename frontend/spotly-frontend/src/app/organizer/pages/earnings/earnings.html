@@ -1,0 +1,169 @@
+<div class="earnings-page">
+
+  <div class="page-header">
+
+    <div>
+      <h1>Earnings</h1>
+      <p>Track your earnings and transactions</p>
+    </div>
+
+  </div>
+
+  <div class="earnings-cards">
+
+    <div class="earning-card">
+
+      <div class="earning-icon">
+        <i class="bi bi-wallet2"></i>
+      </div>
+
+      <div class="earning-info">
+
+        <span>Total Earnings</span>
+
+        <strong class="money-value">
+          {{ totalEarnings | currency:'EGP':'':'1.2-2' }}
+          <small>EGP</small>
+        </strong>
+
+      </div>
+
+    </div>
+
+    <div class="earning-card">
+
+      <div class="earning-icon">
+        <i class="bi bi-check-circle"></i>
+      </div>
+
+      <div class="earning-info">
+
+        <span>Available Balance</span>
+
+        <strong class="money-value">
+          {{ availableBalance | currency:'EGP':'':'1.2-2' }}
+          <small>EGP</small>
+        </strong>
+
+      </div>
+
+    </div>
+
+    <div class="earning-card">
+
+      <div class="earning-icon">
+        <i class="bi bi-hourglass-split"></i>
+      </div>
+
+      <div class="earning-info">
+
+        <span>Pending Balance</span>
+
+        <strong class="money-value">
+          {{ pendingBalance | currency:'EGP':'':'1.2-2' }}
+          <small>EGP</small>
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <section class="transactions-card">
+
+    <div class="transactions-header">
+
+      <div>
+        <h2>Transactions</h2>
+        <span>{{ transactions.length }} Transactions</span>
+      </div>
+
+    </div>
+
+    <div class="table-responsive">
+
+      <table class="table transactions-table align-middle">
+
+        <thead>
+
+          <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          @for (transaction of transactions; track transaction.id) {
+
+            <tr>
+
+              <td>
+
+                <div class="event-info">
+
+                  <div class="event-icon">
+                    <i class="bi bi-calendar-event"></i>
+                  </div>
+
+                  <span>
+                    {{ transaction.event }}
+                  </span>
+
+                </div>
+
+              </td>
+
+              <td>
+
+                <div class="date-info">
+
+                  <i class="bi bi-calendar3"></i>
+
+                  <span>
+                    {{ formatDate(transaction.date) }}
+                  </span>
+
+                </div>
+
+              </td>
+
+              <td>
+
+                <span class="amount">
+                  {{ transaction.amount | currency:'EGP':'':'1.2-2' }}
+                  <small>EGP</small>
+                </span>
+
+              </td>
+
+              <td>
+
+                <span
+                  class="status-badge"
+                  [class.confirmed]="transaction.status === 'Confirmed'"
+                  [class.pending]="transaction.status === 'Pending'">
+
+                  {{ transaction.status }}
+
+                </span>
+
+              </td>
+
+            </tr>
+
+          }
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+</div>

@@ -1,0 +1,283 @@
+<div class="dashboard">
+
+  <div class="page-header">
+
+    <div>
+      <h1>Dashboard</h1>
+    </div>
+
+  </div>
+
+  <div class="stats">
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        <i class="bi bi-calendar-event"></i>
+      </div>
+
+      <div class="stat-content">
+
+        <span>Total Events</span>
+
+        <strong>
+          {{ stats.totalEvents }}
+        </strong>
+
+        <small>+2 this month</small>
+
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        <i class="bi bi-ticket-perforated"></i>
+      </div>
+
+      <div class="stat-content">
+
+        <span>Total Bookings</span>
+
+        <strong>
+          {{ stats.totalBookings }}
+        </strong>
+
+        <small>+16 this month</small>
+
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        <i class="bi bi-wallet2"></i>
+      </div>
+
+      <div class="stat-content">
+
+        <span>Total Earnings</span>
+
+        <strong>
+          {{ stats.totalEarnings | currency:'EGP':'':'1.2-2' }}
+          <small>EGP</small>
+        </strong>
+
+        <small>+12% this month</small>
+
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        <i class="bi bi-star"></i>
+      </div>
+
+      <div class="stat-content">
+
+        <span>Upcoming Events</span>
+
+        <strong>
+          {{ stats.upcomingEvents }}
+        </strong>
+
+        <small>Next 30 days</small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="dashboard-content">
+
+    <section class="dashboard-card">
+
+      <div class="card-header">
+
+        <div>
+          <h2>Upcoming Events</h2>
+        </div>
+
+        <a routerLink="/organizer/events">
+          View All
+        </a>
+
+      </div>
+
+      <div class="upcoming-events">
+
+        @for (event of upcomingEvents; track event.id) {
+
+          <div class="event-row">
+
+            <div class="event-image">
+
+              <img
+                [src]="event.image"
+                [alt]="event.title">
+
+            </div>
+
+            <div class="event-info">
+
+              <h3>
+                {{ event.title }}
+              </h3>
+
+              <div class="event-meta">
+
+                <span>
+                  <i class="bi bi-calendar3"></i>
+                  {{ event.date }}
+                </span>
+
+                <span>
+                  <i class="bi bi-geo-alt"></i>
+                  {{ event.location }}
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="tickets">
+
+              <strong>
+                {{ event.tickets }}
+              </strong>
+
+              <span>
+                Tickets Sold
+              </span>
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+    </section>
+
+    <section class="dashboard-card">
+
+      <div class="card-header">
+
+        <h2>Recent Bookings</h2>
+
+        <a routerLink="/organizer/bookings">
+          View All
+        </a>
+
+      </div>
+
+      <div class="bookings">
+
+        @for (booking of recentBookings; track booking.id) {
+
+          <div class="booking-row">
+
+            <div class="customer-avatar">
+
+              <img
+                [src]="booking.image"
+                [alt]="booking.customer">
+
+            </div>
+
+            <div class="booking-info">
+
+              <h3>
+                {{ booking.customer }}
+              </h3>
+
+              <p>
+                {{ booking.event }}
+              </p>
+
+              <span>
+                <i class="bi bi-calendar3"></i>
+                {{ booking.date }}
+              </span>
+
+            </div>
+
+            <div class="booking-price">
+
+              <span>
+                {{ booking.tickets }} Ticket
+              </span>
+
+              <strong>
+                {{ booking.amount | currency:'EGP':'':'1.2-2' }}
+              </strong>
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <section class="quick-actions">
+
+    <div class="card-header">
+
+      <h2>Quick Actions</h2>
+
+    </div>
+
+    <div class="actions">
+
+      <a
+        routerLink="/organizer/events"
+        class="action-btn primary">
+
+        <i class="bi bi-plus-lg"></i>
+
+        <span>
+          Create Event
+        </span>
+
+      </a>
+
+      <a
+        routerLink="/organizer/bookings"
+        class="action-btn">
+
+        <i class="bi bi-grid"></i>
+
+        <span>
+          Manage Events
+        </span>
+
+      </a>
+
+      <a
+        routerLink="/organizer/earnings"
+        class="action-btn">
+
+        <i class="bi bi-wallet2"></i>
+
+        <span>
+          View Earnings
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+</div>
