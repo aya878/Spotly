@@ -32,7 +32,7 @@ export class profilecontainer implements OnInit {
     name: '',
     email: '',
     role: 'Event Explorer',
-    avatar: 'user-avatar.png',
+    avatar: 'image/user-avatar.jpg',
     phone: '--',
     city: '--',
     favCategory: '--',
@@ -58,7 +58,6 @@ export class profilecontainer implements OnInit {
   }
 
   getProfile(): void {
-
     const token = localStorage.getItem('userToken');
 
     if (!token) {
@@ -75,66 +74,34 @@ export class profilecontainer implements OnInit {
       `${this.apiUrl}/profile`,
       { headers }
     ).subscribe({
-
       next: (response) => {
-
         console.log('PROFILE:', response);
 
-        const data =
-          response.user ||
-          response.data ||
-          response;
-
-        console.log('NAME:', data.fullName);
-        console.log('EMAIL:', data.email);
+        const data = response.user || response.data || response;
 
         if (data) {
-
-          this.user.name =
-            data.fullName || 'User';
-
-          this.user.email =
-            data.email || '';
-
-          this.user.phone =
-            data.phone || '--';
-
-          this.user.city =
-            data.city || '--';
+          this.user.name = data.fullName || 'User';
+          this.user.email = data.email || '';
+          this.user.phone = data.phone || '--';
+          this.user.city = data.city || '--';
 
           if (data.accountType === 'organizer') {
-
             this.user.role = 'Organizer';
-
           } else if (data.accountType === 'admin') {
-
             this.user.role = 'Admin';
-
           } else {
-
             this.user.role = 'Event Explorer';
           }
 
-          const userKey =
-            `userAvatar_${data.email}`;
-
-          const savedAvatar =
-            localStorage.getItem(userKey);
+          const userKey = `userAvatar_${data.email}`;
+          const savedAvatar = localStorage.getItem(userKey);
 
           if (savedAvatar) {
-
-            this.user.avatar =
-              savedAvatar;
-
+            this.user.avatar = savedAvatar;
           } else if (data.avatar) {
-
-            this.user.avatar =
-              data.avatar;
-
+            this.user.avatar = data.avatar;
           } else {
-
-            this.user.avatar =
-              'user-avatar.png';
+            this.user.avatar = 'user-avatar.png';
           }
 
           localStorage.setItem(
@@ -157,59 +124,35 @@ export class profilecontainer implements OnInit {
             data.reviewsCount ??
             0;
 
-          this.user.tickets =
-            Array.isArray(data.tickets)
-              ? data.tickets
-              : [];
+          this.user.tickets = Array.isArray(data.tickets)
+            ? data.tickets
+            : [];
         }
 
         this.isLoading = false;
       },
 
       error: (error: HttpErrorResponse) => {
-
-        console.error(
-          'PROFILE ERROR:',
-          error
-        );
+        console.error('PROFILE ERROR:', error);
 
         this.isLoading = false;
 
         if (error.status === 401) {
-
-          localStorage.removeItem(
-            'userToken'
-          );
-
-          localStorage.removeItem(
-            'userData'
-          );
+          localStorage.removeItem('userToken');
+          localStorage.removeItem('userData');
+          localStorage.removeItem('userAvatar');
 
           alert('Please login again.');
-
-          this.router.navigate([
-            '/signin'
-          ]);
-
-        } else {
-
-          alert(
-            error.error?.message ||
-            'Failed to load profile.'
-          );
+          this.router.navigate(['/signin']);
         }
       }
     });
   }
 
   openModal(): void {
+    console.log('EDIT BUTTON CLICKED');
 
-    console.log(
-      'EDIT BUTTON CLICKED'
-    );
-
-    this.editForm.name =
-      this.user.name;
+    this.editForm.name = this.user.name;
 
     this.editForm.phone =
       this.user.phone === '--'
@@ -221,117 +164,69 @@ export class profilecontainer implements OnInit {
         ? ''
         : this.user.city;
 
-    this.editForm.avatarPreview =
-      this.user.avatar;
-
+    this.editForm.avatarPreview = this.user.avatar;
     this.selectedAvatarFile = null;
-
     this.isModalOpen = true;
   }
 
   closeModal(): void {
-
     this.isModalOpen = false;
   }
 
-  onAvatarSelected(
-    event: Event
-  ): void {
+  onAvatarSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
 
-    const input =
-      event.target as HTMLInputElement;
-
-    if (
-      !input.files ||
-      input.files.length === 0
-    ) {
+    if (!input.files || input.files.length === 0) {
       return;
     }
 
-    const file =
-      input.files[0];
-
+    const file = input.files[0];
     this.selectedAvatarFile = file;
 
-    const reader =
-      new FileReader();
+    const reader = new FileReader();
 
     reader.onload = () => {
+      const image = reader.result as string;
 
-      const image =
-        reader.result as string;
-
-      this.editForm.avatarPreview =
-        image;
-
-      this.user.avatar =
-        image;
+      this.editForm.avatarPreview = image;
+      this.user.avatar = image;
     };
 
     reader.readAsDataURL(file);
   }
 
-  saveProfileChanges(
-    event?: Event
-  ): void {
-
+  saveProfileChanges(event?: Event): void {
     if (event) {
       event.preventDefault();
     }
 
-    const token =
-      localStorage.getItem(
-        'userToken'
-      );
+    const token = localStorage.getItem('userToken');
 
     if (!token) {
-
-      alert(
-        'Please login first.'
-      );
-
+      alert('Please login first.');
       return;
     }
 
     const updatedData = {
-
-      fullName:
-        this.editForm.name.trim(),
-
-      phone:
-        this.editForm.phone.trim(),
-
-      city:
-        this.editForm.city.trim()
+      fullName: this.editForm.name.trim(),
+      phone: this.editForm.phone.trim(),
+      city: this.editForm.city.trim()
     };
 
-    console.log(
-      'SENDING:',
-      updatedData
-    );
+    console.log('SENDING:', updatedData);
 
-    const headers =
-      new HttpHeaders({
-
-        'Content-Type':
-          'application/json',
-
-        Authorization:
-          `Bearer ${token}`
-      });
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    });
 
     this.http.put<any>(
       `${this.apiUrl}/profile`,
       updatedData,
       { headers }
     ).subscribe({
-
       next: (result) => {
-
-        console.log(
-          'SAVE SUCCESS:',
-          result
-        );
+        console.log('SAVE SUCCESS:', result);
 
         const updatedUser =
           result.user ||
@@ -356,49 +251,41 @@ export class profilecontainer implements OnInit {
 
         localStorage.setItem(
           'userData',
-          JSON.stringify(
-            updatedUser
-          )
+          JSON.stringify(updatedUser)
         );
 
-        if (
-          this.selectedAvatarFile
-        ) {
-
+        if (this.selectedAvatarFile) {
           this.user.avatar =
             this.editForm.avatarPreview;
 
-          if (updatedUser.email) {
+          const userData = JSON.parse(
+            localStorage.getItem('userData') || '{}'
+          );
 
+          if (userData.email) {
             const userKey =
-              `userAvatar_${updatedUser.email}`;
+              `userAvatar_${userData.email}`;
 
             localStorage.setItem(
               userKey,
               this.editForm.avatarPreview
             );
+
+            localStorage.setItem(
+              'userAvatar',
+              this.editForm.avatarPreview
+            );
           }
         }
 
-        this.selectedAvatarFile =
-          null;
+        this.selectedAvatarFile = null;
+        this.isModalOpen = false;
 
-        this.isModalOpen =
-          false;
-
-        alert(
-          'Profile updated successfully!'
-        );
+        alert('Profile updated successfully!');
       },
 
-      error: (
-        err: HttpErrorResponse
-      ) => {
-
-        console.error(
-          'SAVE ERROR:',
-          err
-        );
+      error: (err: HttpErrorResponse) => {
+        console.error('SAVE ERROR:', err);
 
         alert(
           err.error?.message ||

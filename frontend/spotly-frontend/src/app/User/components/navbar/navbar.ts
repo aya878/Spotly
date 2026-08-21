@@ -15,7 +15,7 @@ export class navbar {
 
   menuOpen = false;
 
-  userAvatar = '/image/389068855330083718.jpg';
+  userAvatar = '/image/user-avatar.jpg';
 
   private router = inject(Router);
 
