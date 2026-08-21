@@ -1,0 +1,59 @@
+1.1 Project Overview
+Spotly is an integrated web-based Event Management and Ticketing Platform designed to streamline event discovery and ticket reservation. The system connects attendees with event managers while providing administrators with oversight tools to maintain platform integrity.
+
+1.2 Functional Requirements (by User Role)
+Guest User:
+
+Browse all publicly listed active events.
+
+Search events using keywords and filter by date, category, location, or price.
+
+View detailed event pages (dates, pricing, and remaining capacity).
+
+Automatically prompt for account authentication upon attempting to reserve a ticket.
+
+Registered User:
+
+All Guest functionalities.
+
+Reserve event tickets with automatic real-time capacity checks.
+
+View personal booking history via the "My Bookings" dashboard.
+
+Cancel existing active bookings to release reserved seats back to the event.
+
+Event Organizer:
+
+Access a dedicated Organizer Dashboard.
+
+Create new events, defining total capacity, schedules, and ticket pricing.
+
+Update or delete events (strictly enforced by ownership authorization).
+
+Monitor real-time attendee lists and total ticket sales.
+
+System Admin:
+
+Access a comprehensive Admin Dashboard.
+
+Manage and moderate user/organizer accounts (e.g., suspend violating profiles).
+
+Review, edit, or remove inappropriate events or unauthorized bookings.
+
+View platform-wide performance metrics and analytical reports.
+
+1.3 Key Business Rules
+Capacity Rule: Ticket purchases are granted only if available_tickets >= requested_tickets.
+
+Ownership Rule: Organizers can modify/delete events only if organizer_id == current_user_id.
+
+Authentication Rule: Protected operations require valid JWT (JSON Web Token) authentication.
+
+Cancellation Rule: Canceling a reservation sets booking status to cancelled and increments the event's available_tickets.
+
+1.4 Non-Functional Requirements
+Security: Password encryption using modern hashing algorithms and route protection via JWT.
+
+Usability: Fully responsive user interface for seamless experience across mobile, tablet, and desktop devices.
+
+Reliability: Atomic transactional database updates to prevent race conditions and overbooking.
