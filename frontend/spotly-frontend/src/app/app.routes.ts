@@ -28,8 +28,7 @@ export const routes: Routes = [
 
   { path: 'allevent',loadComponent: () => import('./User/pages/allevent/allevent').then(m => m.EventsComponent)},
 
-  { path: 'eventdetailspage',loadComponent: () => import('./User/pages/eventdetailspage/eventdetailspage').then(m => m.EventsdetailsComponent)},
-
+{path: 'eventdetailspage/:id',loadComponent: () => import('./User/pages/eventdetailspage/eventdetailspage').then(m => m.EventsdetailsComponent)},
 
   { path: 'organizer',component: OrganizerLayout,
 

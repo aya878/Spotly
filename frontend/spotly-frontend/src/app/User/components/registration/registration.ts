@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core'; 
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'; 
+import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +13,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   styleUrl: './registration.css'
 })
 export class container {
-  private http = inject(HttpClient);
+
+  private authService = inject(AuthService);
   private router = inject(Router);
 
   registerData = {
@@ -23,28 +25,33 @@ export class container {
     role: 'user'
   };
 
-  isPasswordVisible: boolean = false;
-  isConfirmPasswordVisible: boolean = false;
+  isPasswordVisible = false;
+  isConfirmPasswordVisible = false;
 
- selectRole(role: string): void {
-  this.registerData.role = role;
-}
+  selectRole(role: string): void {
+    this.registerData.role = role;
+  }
 
   togglePassword(): void {
     this.isPasswordVisible = !this.isPasswordVisible;
   }
 
   toggleConfirmPassword(): void {
-    this.isConfirmPasswordVisible = !this.isConfirmPasswordVisible;
+    this.isConfirmPasswordVisible =
+      !this.isConfirmPasswordVisible;
   }
 
-  createAccount(event?: Event): void { 
-    if (event) event.preventDefault();
+  createAccount(event?: Event): void {
+
+    if (event) {
+      event.preventDefault();
+    }
 
     const name = this.registerData.fullName.trim();
     const email = this.registerData.email.trim();
     const password = this.registerData.password;
-    const confirmPassword = this.registerData.confirmPassword;
+    const confirmPassword =
+      this.registerData.confirmPassword;
 
     // Validation
     if (!name || !email || !password || !confirmPassword) {
@@ -62,36 +69,60 @@ export class container {
       return;
     }
 
+    // Data expected by Backend
     const payload = {
-      name: name,
+      fullName: name,
       email: email,
       password: password,
-      role: this.registerData.role
+      confirmPassword: confirmPassword,
+      accountType: this.registerData.role
     };
 
-    this.http.post<any>('https://api.spotly.com/v1/auth/register', payload)
-      .subscribe({
-        next: (result: any) => { 
-          if (result.token) {
-            localStorage.setItem('userToken', result.token);
-          }
-          if (result.user) {
-            localStorage.setItem('userData', JSON.stringify(result.user));
-          }
+    // Send registration request
+    this.authService.register(payload).subscribe({
 
-          alert('Account created successfully!');
+      next: (result: any) => {
 
-          if (this.registerData.role === 'organizer') {
-            this.router.navigate(['/organizer/dashboard']);
-          } else {
-            this.router.navigate(['/home']);
-          }
-        },
-        error: (err: HttpErrorResponse) => { 
-          console.error('Registration Error:', err);
-          const errorMessage = err.error?.message || 'Registration failed. Please try again.';
-          alert(errorMessage);
+        console.log('Registration Success:', result);
+
+        if (result.token) {
+          localStorage.setItem(
+            'userToken',
+            result.token
+          );
         }
-      });
+
+        if (result.user) {
+          localStorage.setItem(
+            'userData',
+            JSON.stringify(result.user)
+          );
+        }
+
+        alert('Account created successfully!');
+
+        if (this.registerData.role === 'organizer') {
+          this.router.navigate([
+            '/organizer/dashboard'
+          ]);
+        } else {
+          this.router.navigate(['/home']);
+        }
+      },
+
+      error: (err: HttpErrorResponse) => {
+
+        console.error(
+          'Registration Error:',
+          err
+        );
+
+        const errorMessage =
+          err.error?.message ||
+          'Registration failed. Please try again.';
+
+        alert(errorMessage);
+      }
+    });
   }
 }

@@ -1,27 +1,22 @@
 <div class="profile-page">
 
   <div class="profile-header">
-
-      <h1>Profile</h1>
-
+    <h1>Profile</h1>
   </div>
-
 
   <div class="profile-content">
 
     <section class="profile-card">
 
       <div class="profile-card-header">
-
         <h2>
           Personal Information
         </h2>
-
       </div>
-
 
       <div class="profile-main">
 
+        <!-- PROFILE PHOTO -->
 
         <div class="profile-photo-section">
 
@@ -33,16 +28,13 @@
             >
 
             <div class="camera-btn">
-
               <i class="bi bi-camera"></i>
-
             </div>
 
           </div>
 
-
           <h3>
-            {{ profile.name }}
+            {{ profile.name || 'Loading...' }}
           </h3>
 
           <span>
@@ -51,9 +43,11 @@
 
         </div>
 
+        <!-- FORM -->
 
         <div class="profile-form row g-3">
 
+          <!-- NAME -->
 
           <div class="form-group col-md-6">
 
@@ -64,12 +58,14 @@
             <input
               type="text"
               class="form-control"
+              name="name"
               [(ngModel)]="profile.name"
               [disabled]="!isEditing"
             >
 
           </div>
 
+          <!-- EMAIL -->
 
           <div class="form-group col-md-6">
 
@@ -80,12 +76,14 @@
             <input
               type="email"
               class="form-control"
+              name="email"
               [(ngModel)]="profile.email"
-              [disabled]="!isEditing"
+              disabled
             >
 
           </div>
 
+          <!-- PHONE -->
 
           <div class="form-group col-md-6">
 
@@ -96,12 +94,14 @@
             <input
               type="tel"
               class="form-control"
+              name="phone"
               [(ngModel)]="profile.phone"
               [disabled]="!isEditing"
             >
 
           </div>
 
+          <!-- LOCATION -->
 
           <div class="form-group col-md-6">
 
@@ -112,44 +112,18 @@
             <input
               type="text"
               class="form-control"
+              name="location"
               [(ngModel)]="profile.location"
               [disabled]="!isEditing"
             >
 
           </div>
 
-
-          <div class="form-group col-md-6">
-
-            <label class="form-label">
-              Password
-            </label>
-
-            <div class="password-wrapper">
-
-              <input
-                [type]="passwordVisible ? 'text' : 'password'"
-                class="form-control"
-                [(ngModel)]="profile.password"
-                [disabled]="!isEditing"
-              >
-
-              <i
-                class="bi"
-                [class.bi-eye]="!passwordVisible"
-                [class.bi-eye-slash]="passwordVisible"
-                (click)="togglePassword()"
-              ></i>
-
-            </div>
-
-          </div>
-
-
         </div>
 
       </div>
 
+      <!-- BUTTON -->
 
       <div class="profile-actions">
 
@@ -165,12 +139,14 @@
             [class.bi-check-lg]="isEditing"
           ></i>
 
-          {{ isEditing ? 'Save Changes' : 'Update Profile' }}
+          {{ isEditing
+            ? 'Save Changes'
+            : 'Update Profile'
+          }}
 
         </button>
 
       </div>
-
 
     </section>
 

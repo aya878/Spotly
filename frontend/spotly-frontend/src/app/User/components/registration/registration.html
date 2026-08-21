@@ -1,184 +1,183 @@
 <div class="container">
-<div class="signup-page">
+    <div class="signup-page">
 
-    <!-- Decorative Background -->
-    <div class="circle circle-one"></div>
-    <div class="circle circle-two"></div>
-
-
-    <!-- Logo -->
-     <a routerLink="/home" class="homee"><i class="fa-solid fa-house"></i></a>
-    <div class="logo">
-
-        <div class="logo-icon">
-           <img src="image/logo.png" alt="">
-        </div>
-
-        Spot<span>ly</span>
-
-    </div>
+        <!-- Decorative Background -->
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
 
 
-    <!-- Hero -->
-    <div class="hero">
+        <!-- Logo -->
+        <a routerLink="/home" class="homee"><i class="fa-solid fa-house"></i></a>
+        <div class="logo">
 
-        <div class="hero-text">
+            <div class="logo-icon">
+                <img src="image/logo.png" alt="">
+            </div>
 
-            <h1>
-                Create Your
-                <br>
-                <span>Account</span>
-            </h1>
-
-            <p>
-                Join Spotly and start managing
-                amazing events 🎉 .
-            </p>
+            Spot<span>ly</span>
 
         </div>
-        <div class="welcom-img">
-            <img src="image/WhatsApp_Image_2026-08-16_at_5.04.36_PM-removebg-preview.png" alt="">
+
+
+        <!-- Hero -->
+        <div class="hero">
+
+            <div class="hero-text">
+
+                <h1>
+                    Create Your
+                    <br>
+                    <span>Account</span>
+                </h1>
+
+                <p>
+                    Join Spotly and start managing
+                    amazing events 🎉 .
+                </p>
+
+            </div>
+            <div class="welcom-img">
+                <img src="image/WhatsApp_Image_2026-08-16_at_5.04.36_PM-removebg-preview.png" alt="">
+            </div>
         </div>
-    </div>
     </div>
     <div class="container">
         <div class="signup-card">
-        <div class="card-title">
-            <h2>Sign Up</h2>
-            <p>
-                Fill in your details to create your account
-            </p>
-        </div>
-        <div class="form-section-title">
-       <i class="fa-solid fa-user"></i> <span>Personal Information</span> 
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label for="fullName">
-                    Full Name
-                </label>
-               <i class="fa-regular fa-user usee"></i> <input type="text" id="fullName" placeholder="Enter your full name">
+            <div class="card-title">
+                <h2>Sign Up</h2>
+                <p>
+                    Fill in your details to create your account
+                </p>
             </div>
-            <div class="form-group">
-                <label for="email">
-                    Email
-                </label>
-               <i class="fa-regular fa-envelope usee"></i> <input type="email" id="email"placeholder="Enter your email">
+            <div class="form-section-title">
+                <i class="fa-solid fa-user"></i> <span>Personal Information</span>
             </div>
-        </div>
-        <div class="form-row">
 
-            <div class="form-group">
-
-                <label for="password">
-                    Password
-                </label>
-
-                <i class="fa-solid fa-lock usee"></i> <div class="password-input-wrapper">
-    <input 
-      [type]="isPasswordVisible ? 'text' : 'password'" 
-      id="password" 
-      [(ngModel)]="registerData.password"
-      name="password"
-      placeholder="Create a password"
-    />
-    
-    <i 
-      class="fa-regular" 
-      [ngClass]="isPasswordVisible ? 'fa-eye' : 'fa-eye-slash'" 
-      class="lockk"
-      (click)="togglePassword()">
-    </i>
-  </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">
+                        Full Name
+                    </label>
+                    <i class="fa-regular fa-user usee"></i> <input type="text" id="fullName"
+                        [(ngModel)]="registerData.fullName" name="fullName" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">
+                        Email
+                    </label>
+                    <i class="fa-regular fa-envelope usee"></i> <input type="email" id="email"
+                        [(ngModel)]="registerData.email" name="email" placeholder="Enter your email">
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-row">
 
-                <label for="confirmPassword">
-                    Confirm Password
-                </label>
-                <i class="fa-solid fa-lock usee"></i><input
-                    type="password" id="confirmPassword" placeholder="Confirm your password"><i class="fa-regular fa-eye-slash lock"></i>
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <i class="fa-solid fa-lock usee"></i>
+                    <div class="password-input-wrapper">
+                        <input [type]="isPasswordVisible ? 'text' : 'password'" id="password"
+                            [(ngModel)]="registerData.password" name="password" placeholder="Create a password" />
+
+                        <i class="fa-regular" [ngClass]="isPasswordVisible ? 'fa-eye' : 'fa-eye-slash'" class="lockk"
+                            (click)="togglePassword()">
+                        </i>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+                    <i class="fa-solid fa-lock usee"></i><input type="password" id="confirmPassword"
+                        [(ngModel)]="registerData.confirmPassword" name="confirmPassword"
+                        placeholder="Confirm your password">
+                    <i class="fa-regular" [ngClass]="isPasswordVisible ? 'fa-eye' : 'fa-eye-slash'" class="lock"
+                        (click)="togglePassword()">
+                    </i>
+                </div>
             </div>
-        </div>
-        <div class="role-title">
+            <div class="role-title">
 
-            <h3>
-     <i class="fa-solid fa-user"></i> Account Type
-            </h3>
+                <h3>
+                    <i class="fa-solid fa-user"></i> Account Type
+                </h3>
 
-            <p>
-                Choose how you want to join Spotly
-            </p>
-        </div>
-        <div class="roles">
-            <!-- USER -->
-           <div 
-  class="role-card"
-  [class.active]="registerData.role === 'user'"
-  (click)="selectRole('user')">
-  
-  <div class="role-radio"></div>
-  
-  <div class="role-icon">
-    <i class="fa-regular fa-user"></i>
-  </div>
-  
-  <h4>User</h4>
-  
-  <p>
-    Join events and
-    <br>
-    enjoy experiences
-  </p>
-</div>
-           <div 
-  class="role-card"
-  [class.active]="registerData.role === 'organizer'"
-  (click)="selectRole('organizer')">
-  
-  <div class="role-radio"></div>
-  
-  <div class="role-icon">
-    <i class="fa-regular fa-calendar-days"></i>
-  </div>
+                <p>
+                    Choose how you want to join Spotly
+                </p>
+            </div>
+            <div class="roles">
+                <!-- USER -->
+                <div class="role-card" [class.active]="registerData.role === 'user'" (click)="selectRole('user')">
 
-  <h4>Organizer</h4>
+                    <div class="role-radio"></div>
 
-  <p>
-    Create and manage
-    <br>
-    your own events
-  </p>
-</div>
+                    <div class="role-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
 
-        </div>
-        <input
-            type="hidden"
-            id="selectedRole"
-            value="user">
- <button class="create-btn" (click)="createAccount()">
-    Create Account
-</button>
-        <p class="or">or sign up with</p>
-        <div class="soci">
-            <a href="" class="ico"><img src="image/icons8-google-48-removebg-preview.png" alt=""> <h3>Googel</h3></a>
-            <a href="" class="ico face"><img src="image/vecteezy_facebook-logo-png-facebook-icon-transparent-png_18930698-removebg-preview.png" alt=""> <h3>Facebook</h3></a>
-            <a href=""class="ico"><img src="image/icons8-apple-logo-50.png" alt=""> <h3>Apple</h3></a>
-        </div>
+                    <h4>User</h4>
 
-        <!-- Login -->
-        <div class="login-link">
+                    <p>
+                        Join events and
+                        <br>
+                        enjoy experiences
+                    </p>
+                </div>
+                <div class="role-card" [class.active]="registerData.role === 'organizer'"
+                    (click)="selectRole('organizer')">
 
-            Already have an account?
+                    <div class="role-radio"></div>
 
-            <a routerLink="/signin">
-                Sign In
-            </a>
+                    <div class="role-icon">
+                        <i class="fa-regular fa-calendar-days"></i>
+                    </div>
+
+                    <h4>Organizer</h4>
+
+                    <p>
+                        Create and manage
+                        <br>
+                        your own events
+                    </p>
+                </div>
+
+            </div>
+            <input type="hidden" id="selectedRole" value="user">
+            <button class="create-btn" (click)="createAccount()">
+                Create Account
+            </button>
+            <p class="or">or sign up with</p>
+            <div class="soci">
+                <a href="" class="ico"><img src="image/icons8-google-48-removebg-preview.png" alt="">
+                    <h3>Googel</h3>
+                </a>
+                <a href="" class="ico face"><img
+                        src="image/vecteezy_facebook-logo-png-facebook-icon-transparent-png_18930698-removebg-preview.png"
+                        alt="">
+                    <h3>Facebook</h3>
+                </a>
+                <a href="" class="ico"><img src="image/icons8-apple-logo-50.png" alt="">
+                    <h3>Apple</h3>
+                </a>
+            </div>
+
+            <!-- Login -->
+            <div class="login-link">
+
+                Already have an account?
+
+                <a routerLink="/signin">
+                    Sign In
+                </a>
+
+            </div>
 
         </div>
 
     </div>
-
 </div>
-    </div>
