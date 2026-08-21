@@ -12,7 +12,7 @@ import { OrganizerLayout } from './organizer/organizer-layout/organizer-layout';
 
 export const routes: Routes = [
 
-  {  path: '',redirectTo: 'organizer/dashboard',pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
 
   { path: 'home',loadComponent: () => import('./User/pages/home/home').then(m => m.Home)},
 
@@ -24,11 +24,11 @@ export const routes: Routes = [
 
   { path: 'aboutus',loadComponent: () => import('./User/pages/aboutus/aboutus').then(m => m.AboutusComponent)},
 
-  { path: 'profile',loadComponent: () => import('./User/pages/profileuser/profileuser').then(m => m.ProfileComponent)},
+  { path: 'profileuser',loadComponent: () => import('./User/pages/profileuser/profileuser').then(m => m.ProfileComponent)},
 
-  { path: 'events',loadComponent: () => import('./User/pages/allevent/allevent').then(m => m.EventsComponent)},
+  { path: 'allevent',loadComponent: () => import('./User/pages/allevent/allevent').then(m => m.EventsComponent)},
 
-  { path: 'event-details',loadComponent: () => import('./User/pages/eventdetailspage/eventdetailspage').then(m => m.EventsdetailsComponent)},
+  { path: 'eventdetailspage',loadComponent: () => import('./User/pages/eventdetailspage/eventdetailspage').then(m => m.EventsdetailsComponent)},
 
 
   { path: 'organizer',component: OrganizerLayout,

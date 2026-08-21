@@ -6,7 +6,10 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
-
+ .homee{
+    color:#7601cb;
+    font-size: 30px;
+ }
         body {
             background: linear-gradient(135deg, #faf7ff, #eee3ff);
             color: #15152b;
@@ -337,3 +340,347 @@
 
 
 
+/* respnsivvvv */
+
+@media (max-width: 1400px) {
+
+    .signup-page {
+        padding: 30px 40px;
+    }
+
+    .hero {
+        max-width: 1100px;
+        top: -100px;
+    }
+
+    .hero .welcom-img {
+        width: 350px;
+    }
+
+    .hero .welcom-img img {
+        margin-left: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .signupcard {
+        top: -350px;
+        width: 55%;
+    }
+}
+
+
+
+@media (max-width: 1199px) {
+
+    .signup-page {
+        padding: 25px 30px;
+    }
+
+    .logo {
+        font-size: 42px;
+    }
+
+    .logo-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero {
+        width: 90%;
+        top: 0;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+        order: 1;
+    }
+
+    .hero .welcom-img {
+        width: 350px;
+        order: 2;
+    }
+
+    .hero .welcom-img img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-text p {
+        margin: auto;
+        font-size: 17px;
+    }
+
+    .signupcard {
+        position: relative;
+        top: 0;
+        width: 70%;
+        max-width: 700px;
+        margin: 20px auto 40px;
+        padding: 30px;
+    }
+}
+
+
+
+
+@media (max-width: 767px) {
+
+    .signup-page {
+        padding: 20px 15px;
+    }
+
+    .containerlog {
+        width: 95%;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .logo-icon img {
+        width: 50px;
+        height: 50px;
+        margin-right: 7px;
+    }
+
+    .circle-one {
+        width: 60px;
+        height: 60px;
+        top: 100px;
+        right: -20px;
+    }
+
+    .circle-two {
+        width: 40px;
+        height: 40px;
+        top: 250px;
+        right: 20px;
+    }
+
+    .hero {
+        width: 100%;
+        margin-top: 25px;
+        gap: 5px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+        line-height: 1.6;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .hero .welcom-img {
+        width: 280px;
+        margin-bottom: -10px;
+    }
+
+    .hero .welcom-img img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .signupcard {
+        width: 90%;
+        top: 0;
+        margin: 0 auto 30px;
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .card-title h2 {
+        font-size: 25px;
+    }
+
+    .card-title p {
+        font-size: 13px;
+    }
+
+    .form-section-title {
+        font-size: 14px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input {
+        height: 45px;
+        padding: 0 35px;
+    }
+
+    .save {
+        margin-block: 20px;
+        font-size: 13px;
+    }
+
+    .soci {
+        gap: 10px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    .ico {
+        padding-inline: 15px;
+        padding-block: 5px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .soci .ico h3 {
+        font-size: 12px;
+    }
+
+    .ico img {
+        width: 24px;
+    }
+
+    .ico.face img {
+        width: 32px;
+    }
+}
+
+
+
+
+@media (max-width: 480px) {
+
+    .signup-page {
+        padding: 15px 10px;
+    }
+
+    .containerlog {
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .logo-icon img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .hero {
+        margin-top: 20px;
+        gap: 0;
+    }
+
+    .hero-text h1 {
+        font-size: 27px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 0 5px;
+    }
+
+    .hero .welcom-img {
+        width: 220px;
+        margin-top: 5px;
+        margin-bottom: -15px;
+    }
+
+    .signupcard {
+        width: 95%;
+        padding: 20px 15px;
+        margin-top: 0;
+        border-radius: 18px;
+    }
+
+    .card-title {
+        margin-bottom: 18px;
+    }
+
+    .card-title h2 {
+        font-size: 22px;
+    }
+
+    .card-title p {
+        font-size: 12px;
+    }
+
+    .form-section-title {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+        margin-block: 7px;
+    }
+
+    .form-group input {
+        height: 42px;
+        font-size: 13px;
+        padding: 0 32px;
+    }
+
+    .save {
+        margin-block: 15px;
+        font-size: 12px;
+    }
+
+    .create-btn {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .or {
+        margin-block: 12px;
+        font-size: 13px;
+    }
+
+    .soci {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        gap: 8px;
+    }
+
+    .ico {
+        padding-inline: 8px;
+    }
+
+    .soci .ico h3 {
+        font-size: 10px;
+    }
+
+    .ico img {
+        width: 20px;
+    }
+
+    .ico.face img {
+        width: 27px;
+    }
+
+    .login-link {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+}
