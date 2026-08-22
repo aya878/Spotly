@@ -140,18 +140,9 @@ export class Events {
       category: this.newEvent.category,
       date: this.newEvent.date,
       location: this.newEvent.location.trim(),
-      ticketsSold: Math.max(
-        0,
-        Number(this.newEvent.ticketsSold) || 0
-      ),
-      totalTickets: Math.max(
-        0,
-        Number(this.newEvent.totalTickets) || 0
-      ),
-      ticketPrice: Math.max(
-        0,
-        Number(this.newEvent.ticketPrice) || 0
-      ),
+      ticketsSold: Math.max(0,Number(this.newEvent.ticketsSold) || 0),
+      totalTickets: Math.max(0, Number(this.newEvent.totalTickets) || 0),
+      ticketPrice: Math.max( 0, Number(this.newEvent.ticketPrice) || 0),
       status: this.getStatus(this.newEvent.date)
     };
 
@@ -205,13 +196,9 @@ export class Events {
           0,
           Number(this.newEvent.ticketsSold) || 0
         ),
-        totalTickets: Math.max(
-          0,
-          Number(this.newEvent.totalTickets) || 0
+        totalTickets: Math.max(0,Number(this.newEvent.totalTickets) || 0
         ),
-        ticketPrice: Math.max(
-          0,
-          Number(this.newEvent.ticketPrice) || 0
+        ticketPrice: Math.max(0,Number(this.newEvent.ticketPrice) || 0
         ),
         status: this.getStatus(this.newEvent.date)
       };
