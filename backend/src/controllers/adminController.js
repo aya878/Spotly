@@ -8,7 +8,7 @@ const getUsers = async (req, res) => {
     try {
         const users = await User.find()
             .select("-password")
-            .sort({ createdAt: -1 });
+            .sort({ createdAt: -1 }); //descendingly
 
         res.status(200).json({
             success: true,
