@@ -16,26 +16,18 @@ const {
 const router = express.Router();
 
 
-// =========================
 // Admin Authentication
-// =========================
 
 router.use(protect);
 router.use(isAdmin);
 
-
-// =========================
 // Users
-// =========================
 
 router.get("/users", getUsers);
 
 router.delete("/users/:id", deleteUser);
 
-
-// =========================
 // Events
-// =========================
 
 router.get("/events", getEvents);
 

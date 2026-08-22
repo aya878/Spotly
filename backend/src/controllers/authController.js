@@ -18,11 +18,15 @@ const generateToken = (user) => {
         }
     );
 };
-
 // Register User
 
 const registerUser = async (req, res) => {
+
+    console.log("REGISTER ROUTE HIT");
+    console.log("BODY:", req.body);
+
     try {
+
         const {
             fullName,
             email,
@@ -31,9 +35,7 @@ const registerUser = async (req, res) => {
             accountType
         } = req.body;
 
-    
         // Required Fields
-
         if (
             !fullName ||
             !email ||
@@ -46,6 +48,7 @@ const registerUser = async (req, res) => {
                 message: "All fields are required"
             });
         }
+
 
         // Full Name Validation
 
@@ -249,9 +252,97 @@ const loginUser = async (req, res) => {
         });
     }
 };
+// Get Current User Profile
 
+const getProfile = async (req, res) => {
+  try {
+
+    const user = await User.findById(req.user._id)
+      .select("-password");
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found"
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      user
+    });
+
+  } catch (error) {
+
+    console.error("Get Profile Error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Server error"
+    });
+  }
+};
+
+
+// UPDATE PROFILE
+
+
+const updateProfile = async (req, res) => {
+
+    try {
+
+        const {
+            fullName,
+            phone,
+            city
+        } = req.body;
+
+        if (!fullName || fullName.trim().length < 3) {
+            return res.status(400).json({
+                success: false,
+                message: "Full name must be at least 3 characters"
+            });
+        }
+
+        const user = await User.findById(req.user._id);
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+
+        user.fullName = fullName.trim();
+        user.phone = phone ? phone.trim() : "";
+        user.city = city ? city.trim() : "";
+
+        await user.save();
+
+        const updatedUser =
+            await User.findById(req.user._id)
+                .select("-password");
+
+        res.status(200).json({
+            success: true,
+            message: "Profile updated successfully",
+            user: updatedUser
+        });
+
+    } catch (error) {
+
+        console.error("UPDATE PROFILE ERROR:", error);
+
+        res.status(500).json({
+            success: false,
+            message: "Server error"
+        });
+    }
+};
 module.exports = {
     registerUser,
     loginUser,
-    generateToken
+    generateToken,
+    getProfile,
+    updateProfile
 };

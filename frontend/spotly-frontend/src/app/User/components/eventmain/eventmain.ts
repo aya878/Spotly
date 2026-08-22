@@ -52,7 +52,7 @@ export class totalevent implements OnInit {
     });
   }
 
-  goToDetails(eventId: number): void {
-    this.router.navigate(['/eventdetails', eventId]);
-  }
+goToDetails(eventId: number): void {
+  this.router.navigate(['/eventdetailspage', eventId]);
+}
 }

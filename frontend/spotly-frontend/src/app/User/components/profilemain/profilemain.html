@@ -1,134 +1,295 @@
-<!-- Profile Section -->
-  <main class="profilecontainer">
-    
-    <section class="profile-header-card">
-      <div class="profile-cover"></div>
-      
-      <div class="profile-avatar-wrapper" id="avatarClickable" style="cursor: pointer;">
-        <img src="" alt="" class="profile-avatar" id="userAvatarImg">
-        <button type="button" class="edit-avatar-btn" title="Change Photo">
-          <i class="fa-solid fa-camera"></i>
-        </button>
-        <input type="file" id="avatarFileInput" accept="image/*" style="display: none;">
-      </div>
-      
-      <div class="profile-info">
-        <h2 class="user-name" id="userName">Loading...</h2>
-        <p class="user-email" id="userEmail">Loading...</p>
-        <span class="badge-role" id="userRole"><i class="fa-solid fa-ticket"></i> Event Explorer</span>
+<main class="profilecontainer">
+
+  <!-- PROFILE HEADER -->
+  <section class="profile-header-card">
+
+    <div class="profile-cover"></div>
+
+    <!-- PROFILE AVATAR -->
+    <div class="profile-avatar-wrapper">
+      <img [src]="user.avatar" alt="User Avatar" class="profile-avatar">
+    </div>
+
+    <!-- USER INFORMATION -->
+    <div class="profile-info">
+      <h2 class="user-name">
+        {{ user.name || 'Loading...' }}
+      </h2>
+
+      <p class="user-email">
+        {{ user.email || 'Loading...' }}
+      </p>
+
+      <span class="badge-role">
+        <i class="fa-solid fa-ticket"></i>
+        {{ user.role }}
+      </span>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="profile-actions">
+
+      <button type="button" class="btn btn-primary" (click)="openModal()">
+        <i class="fa-solid fa-user-pen"></i>
+        Edit Profile
+      </button>
+
+      <button type="button" class="btn btn-outline">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- STATISTICS -->
+  <section class="stats-grid">
+
+    <!-- BOOKED -->
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-ticket"></i>
       </div>
 
-      <div class="profile-actions">
-        <button class="btn btn-primary" id="editProfileBtn"><i class="fa-solid fa-user-pen"></i> Edit Profile</button>
-        <button class="btn btn-outline"><i class="fa-solid fa-gear"></i> Settings</button>
+      <div class="stat-details">
+        <h3>{{ user.stats.booked }}</h3>
+        <p>Tickets Booked</p>
       </div>
-    </section>
+    </div>
 
-    <section class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-ticket"></i></div>
-        <div class="stat-details">
-          <h3 id="statBooked">0</h3>
-          <p>Tickets Booked</p>
+    <!-- SAVED -->
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-heart"></i>
+      </div>
+
+      <div class="stat-details">
+        <h3>{{ user.stats.saved }}</h3>
+        <p>Saved Events</p>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-star"></i>
+      </div>
+
+      <div class="stat-details">
+        <h3>{{ user.stats.reviews }}</h3>
+        <p>Reviews Left</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROFILE CONTENT -->
+  <section class="profile-content">
+
+    <!-- UPCOMING TICKETS -->
+    <div class="content-card">
+
+      <div class="card-header">
+        <h3>
+          <i class="fa-solid fa-calendar-check"></i>
+          My Upcoming Tickets
+        </h3>
+
+        <a href="#" class="view-all">
+          View All
+        </a>
+      </div>
+
+      <div class="tickets-list">
+
+        <p *ngIf="user.tickets.length === 0">
+          No upcoming tickets.
+        </p>
+
+        <div class="mini-ticket" *ngFor="let ticket of user.tickets">
+
+          <div class="ticket-date">
+            <span class="day">
+              {{ ticket.day }}
+            </span>
+
+            <span class="month">
+              {{ ticket.month }}
+            </span>
+          </div>
+
+          <div class="ticket-details">
+            <h4>
+              {{ ticket.eventName }}
+            </h4>
+
+            <p>
+              {{ ticket.location }}
+            </p>
+          </div>
+
+          <button type="button" class="btn-sm">
+            View
+          </button>
+
         </div>
+
       </div>
 
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-heart"></i></div>
-        <div class="stat-details">
-          <h3 id="statSaved">0</h3>
-          <p>Saved Events</p>
-        </div>
+    </div>
+
+    <!-- ACCOUNT INFO -->
+    <div class="content-card">
+
+      <div class="card-header">
+        <h3>
+          <i class="fa-solid fa-sliders"></i>
+          Account Info
+        </h3>
       </div>
 
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
-        <div class="stat-details">
-          <h3 id="statReviews">0</h3>
-          <p>Reviews Left</p>
-        </div>
-      </div>
-    </section>
+      <ul class="info-list">
 
-    <section class="profile-content">
-      
-      <!-- Upcoming Tickets -->
-      <div class="content-card">
-        <div class="card-header">
-          <h3><i class="fa-solid fa-calendar-check"></i> My Upcoming Tickets</h3>
-          <a href="#" class="view-all">View All</a>
-        </div>
-        
-        <div class="tickets-list" id="ticketsListContainer">
-        </div>
-      </div>
+        <!-- PHONE -->
+        <li>
+          <span class="info-label">
+            <i class="fa-solid fa-phone"></i>
+            Phone:
+          </span>
 
-      <!-- Account Details & Preferences -->
-      <div class="content-card">
-        <div class="card-header">
-          <h3><i class="fa-solid fa-sliders"></i> Account Info</h3>
-        </div>
+          <span class="info-value">
+            {{ user.phone }}
+          </span>
+        </li>
 
-        <ul class="info-list">
-          <li>
-            <span class="info-label"><i class="fa-solid fa-phone"></i> Phone:</span>
-            <span class="info-value" id="userPhone">--</span>
-          </li>
-          <li>
-            <span class="info-label"><i class="fa-solid fa-city"></i> City:</span>
-            <span class="info-value" id="userCity">--</span>
-          </li>
-          <li>
-            <span class="info-label"><i class="fa-solid fa-heart"></i> Favorite Category:</span>
-            <span class="info-value" id="userFavCategory">--</span>
-          </li>
-        </ul>
-      </div>
+        <!-- CITY -->
+        <li>
+          <span class="info-label">
+            <i class="fa-solid fa-city"></i>
+            City:
+          </span>
 
-    </section>
+          <span class="info-value">
+            {{ user.city }}
+          </span>
+        </li>
 
+        <!-- FAVORITE CATEGORY -->
+        <li>
+          <span class="info-label">
+            <i class="fa-solid fa-heart"></i>
+            Favorite Category:
+          </span>
 
-  <div class="modal-overlay" id="editProfileModal">
-    <div class="modal-card">
+          <span class="info-value">
+            {{ user.favCategory }}
+          </span>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EDIT MODAL -->
+  <div *ngIf="isModalOpen" class="modal-overlay" (click)="closeModal()">
+
+    <div class="modal-card" (click)="$event.stopPropagation()">
+
+      <!-- MODAL HEADER -->
       <div class="modal-header">
-        <h3><i class="fa-solid fa-user-pen"></i> Edit Profile</h3>
-        <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+
+        <h3>
+          <i class="fa-solid fa-user-pen"></i>
+          Edit Profile
+        </h3>
+
+        <button type="button" class="close-modal-btn" (click)="closeModal()">
+          &times;
+        </button>
+
       </div>
 
-      <form id="editProfileForm" class="modal-body">
-        <!-- Change Avatar Preview -->
+      <!-- FORM -->
+      <form class="modal-body" (submit)="saveProfileChanges($event)">
+
+        <!-- AVATAR -->
         <div class="modal-avatar-section">
-          <div class="modal-avatar-wrapper" id="modalAvatarClickable">
-            <img src="user-avatar.png" alt="Avatar Preview" id="modalAvatarPreview">
+
+          <input #avatarInput type="file" accept="image/*" hidden (change)="onAvatarSelected($event)">
+
+          <div class="modal-avatar-wrapper" (click)="avatarInput.click()">
+
+            <img [src]="editForm.avatarPreview" alt="Avatar Preview">
+
             <div class="avatar-overlay">
               <i class="fa-solid fa-camera"></i>
             </div>
+
           </div>
-          <input type="file" id="modalAvatarInput" accept="image/*" style="display: none;">
-          <p class="avatar-hint">Click image to change photo</p>
+
+          <p class="avatar-hint">
+            Click image to change photo
+          </p>
+
         </div>
 
-        <!-- Input Fields -->
+        <!-- NAME -->
         <div class="form-group">
-          <label for="editNameInput">Full Name</label>
-          <input type="text" id="editNameInput" required placeholder="Enter full name">
+
+          <label for="editNameInput">
+            Full Name
+          </label>
+
+          <input id="editNameInput" type="text" name="fullName" [(ngModel)]="editForm.name" required
+            placeholder="Enter full name">
         </div>
 
+        <!-- EMAIL -->
         <div class="form-group">
-          <label for="editPhoneInput">Phone Number</label>
-          <input type="text" id="editPhoneInput" placeholder="Enter phone number">
+
+          <label for="emailInput">
+            Email
+          </label>
+
+          <input id="emailInput" type="email" [value]="user.email" disabled>
+
         </div>
 
+        <!-- PHONE -->
         <div class="form-group">
-          <label for="editCityInput">City</label>
-          <input type="text" id="editCityInput" placeholder="Enter city">
+
+          <label for="editPhoneInput">
+            Phone Number
+          </label>
+
+          <input id="editPhoneInput" type="text" name="phone" [(ngModel)]="editForm.phone"
+            placeholder="Enter phone number">
+
         </div>
 
+        <!-- CITY -->
+        <div class="form-group">
+
+          <label for="editCityInput">
+            City
+          </label>
+
+          <input id="editCityInput" type="text" name="city" [(ngModel)]="editForm.city" placeholder="Enter city">
+        </div>
+        <!-- ACTIONS -->
         <div class="modal-actions">
-          <button type="button" class="btn btn-outline" id="cancelModalBtn">Cancel</button>
-          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <button type="button" class="btn btn-outline" (click)="closeModal()">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Save Changes
+          </button>
         </div>
       </form>
     </div>
   </div>
-    </main>
+</main>
