@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Categories - Evently Admin</title>
+
+    <link rel="stylesheet" href="css/categories.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                ◈ Evently Admin
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    ⌂
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="users.html">
+                    ♙
+                    <span>Users</span>
+                </a>
+
+                <a href="events.html">
+                    ▣
+                    <span>Events</span>
+                </a>
+
+                <a href="bookings.html">
+                    ◉
+                    <span>Bookings</span>
+                </a>
+
+                <a href="categories.html" class="active">
+                    ▤
+                    <span>Categories</span>
+                </a>
+
+                <a href="reports.html">
+                    ▥
+                    <span>Reports</span>
+                </a>
+
+                <a href="#">
+                    ◉
+                    <span>Services</span>
+                </a>
+
+                <a href="settings.html">
+                    ⚙
+                    <span>Settings</span>
+                </a>
+
+                <a href="#">
+                    ♙
+                    <span>Admin</span>
+                </a>
+
+                <a href="#">
+                    ↪
+                    <span>Logout</span>
+                </a>
+
+            </nav>
+
+
+            <div class="admin-info">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>admin@email.com</small>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <button class="menu-btn">
+                    ☰
+                </button>
+
+                <div class="top-right">
+
+                    <div class="search-top">
+
+                        🔍
+
+                        <input
+                            type="text"
+                            placeholder="Search anything..."
+                        >
+
+                    </div>
+
+                    <span class="notification">
+                        ♧
+                    </span>
+
+                    <div class="profile">
+
+                        <div class="small-avatar">
+                            A
+                        </div>
+
+                        <span>Admin</span>
+
+                        <span>⌄</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- Content -->
+            <section class="content">
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h1>Categories</h1>
+
+                        <p>
+                            Manage event categories
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        id="addCategoryBtn"
+                    >
+                        + Add Category
+                    </button>
+
+                </div>
+
+
+                <!-- Search -->
+                <div class="filters">
+
+                    <div class="search-box">
+
+                        🔍
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search categories..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Categories -->
+                <div
+                    class="categories-grid"
+                    id="categoriesGrid"
+                >
+
+
+                    <div class="category-card">
+
+                        <div class="category-icon">
+                            🎵
+                        </div>
+
+                        <div class="category-info">
+
+                            <h3>Music</h3>
+
+                            <p>
+                                24 Events
+                            </p>
+
+                        </div>
+
+                        <div class="category-actions">
+
+                            <button class="edit">
+                                ✎
+                            </button>
+
+                            <button class="delete">
+                                ♧
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-icon">
+                            💻
+                        </div>
+
+                        <div class="category-info">
+
+                            <h3>Technology</h3>
+
+                            <p>
+                                18 Events
+                            </p>
+
+                        </div>
+
+                        <div class="category-actions">
+
+                            <button class="edit">
+                                ✎
+                            </button>
+
+                            <button class="delete">
+                                ♧
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-icon">
+                            🎨
+                        </div>
+
+                        <div class="category-info">
+
+                            <h3>Art</h3>
+
+                            <p>
+                                12 Events
+                            </p>
+
+                        </div>
+
+                        <div class="category-actions">
+
+                            <button class="edit">
+                                ✎
+                            </button>
+
+                            <button class="delete">
+                                ♧
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-icon">
+                            🏢
+                        </div>
+
+                        <div class="category-info">
+
+                            <h3>Business</h3>
+
+                            <p>
+                                15 Events
+                            </p>
+
+                        </div>
+
+                        <div class="category-actions">
+
+                            <button class="edit">
+                                ✎
+                            </button>
+
+                            <button class="delete">
+                                ♧
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-icon">
+                            ⚽
+                        </div>
+
+                        <div class="category-info">
+
+                            <h3>Sports</h3>
+
+                            <p>
+                                20 Events
+                            </p>
+
+                        </div>
+
+                        <div class="category-actions">
+
+                            <button class="edit">
+                                ✎
+                            </button>
+
+                            <button class="delete">
+                                ♧
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-icon">
+                            📚
+                        </div>
+
+                        <div class="category-info">
+
+                            <h3>Education</h3>
+
+                            <p>
+                                10 Events
+                            </p>
+
+                        </div>
+
+                        <div class="category-actions">
+
+                            <button class="edit">
+                                ✎
+                            </button>
+
+                            <button class="delete">
+                                ♧
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Pagination -->
+                <div class="pagination">
+
+                    <button>
+                        ‹
+                    </button>
+
+                    <button class="current">
+                        1
+                    </button>
+
+                    <button>
+                        2
+                    </button>
+
+                    <button>
+                        3
+                    </button>
+
+                    <button>
+                        ›
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/categories.js"></script>
+
+</body>
+
+</html>

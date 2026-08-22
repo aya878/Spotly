@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Users - Evently Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                E
+            </div>
+
+            Evently Admin
+
+        </div>
+
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <span class="menu-icon">⌂</span>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="users.html" class="active">
+                    <span class="menu-icon">♙</span>
+                    Users
+                </a>
+            </li>
+
+            <li>
+                <a href="events.html">
+                    <span class="menu-icon">□</span>
+                    Events
+                </a>
+            </li>
+
+            <li>
+                <a href="bookings.html">
+                    <span class="menu-icon">▣</span>
+                    Bookings
+                </a>
+            </li>
+
+            <li>
+                <a href="categories.html">
+                    <span class="menu-icon">▤</span>
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    <span class="menu-icon">▥</span>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    <span class="menu-icon">⚙</span>
+                    Settings
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="sidebar-user">
+
+            <div class="sidebar-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong>Admin</strong>
+
+                <span>
+                    admin@evently.com
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <span class="menu-toggle">
+                    ☰
+                </span>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <input
+                    class="header-search"
+                    type="text"
+                    placeholder="Search anything..."
+                >
+
+                <span class="notification">
+                    ♧
+                </span>
+
+                <div class="admin-profile-mini">
+
+                    <div class="admin-mini-avatar">
+                        A
+                    </div>
+
+                    Admin
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE -->
+
+        <div class="page-area">
+
+
+            <!-- TITLE -->
+
+            <div class="page-header">
+
+                <div class="page-title">
+
+                    <h1>
+                        Users
+                    </h1>
+
+                    <p>
+                        Manage all registered users.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary"
+                    id="addUserBtn"
+                >
+                    + Add User
+                </button>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="content-card">
+
+                <div class="filters">
+
+                    <input
+                        type="text"
+                        id="searchUser"
+                        class="input search-input"
+                        placeholder="Search users..."
+                    >
+
+
+                    <select
+                        id="roleFilter"
+                        class="select"
+                    >
+
+                        <option value="all">
+                            All Roles
+                        </option>
+
+                        <option value="User">
+                            User
+                        </option>
+
+                        <option value="Organizer">
+                            Organizer
+                        </option>
+
+                        <option value="Admin">
+                            Admin
+                        </option>
+
+                    </select>
+
+
+                    <select
+                        id="statusFilter"
+                        class="select"
+                    >
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- USERS TABLE -->
+
+            <div class="content-card">
+
+                <div class="content-card-header">
+
+                    <h2>
+                        All Users
+                    </h2>
+
+                    <span id="userCount">
+                        0 Users
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    User
+                                </th>
+
+                                <th>
+                                    Email
+                                </th>
+
+                                <th>
+                                    Role
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Joined
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="usersTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+
+                <div class="pagination">
+
+                    <button class="page-btn">
+                        ‹
+                    </button>
+
+                    <button class="page-btn active">
+                        1
+                    </button>
+
+                    <button class="page-btn">
+                        2
+                    </button>
+
+                    <button class="page-btn">
+                        3
+                    </button>
+
+                    <button class="page-btn">
+                        ...
+                    </button>
+
+                    <button class="page-btn">
+                        10
+                    </button>
+
+                    <button class="page-btn">
+                        ›
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="js/users.js"></script>
+
+</body>
+
+</html>

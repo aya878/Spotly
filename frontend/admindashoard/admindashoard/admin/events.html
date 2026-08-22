@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events - Evently Admin</title>
+
+    <link rel="stylesheet" href="css/events.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                ◈ Evently Admin
+            </div>
+
+            <nav>
+
+                <a href="index.html">
+                    ⌂
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="users.html">
+                    ♙
+                    <span>Users</span>
+                </a>
+
+                <a href="events.html" class="active">
+                    ▣
+                    <span>Events</span>
+                </a>
+
+                <a href="#">
+                    ◉
+                    <span>Bookings</span>
+                </a>
+
+                <a href="#">
+                    ▤
+                    <span>Categories</span>
+                </a>
+
+                <a href="#">
+                    ▥
+                    <span>Reports</span>
+                </a>
+
+                <a href="#">
+                    ◉
+                    <span>Services</span>
+                </a>
+
+                <a href="#">
+                    ⚙
+                    <span>Settings</span>
+                </a>
+
+                <a href="#">
+                    ♙
+                    <span>Admin</span>
+                </a>
+
+                <a href="#">
+                    ↪
+                    <span>Logout</span>
+                </a>
+
+            </nav>
+
+
+            <div class="admin-info">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>admin@email.com</small>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main">
+
+
+            <!-- Top Bar -->
+            <header class="topbar">
+
+                <button class="menu-btn">
+                    ☰
+                </button>
+
+
+                <div class="top-right">
+
+                    <div class="search-top">
+
+                        🔍
+
+                        <input
+                            type="text"
+                            placeholder="Search anything..."
+                        >
+
+                    </div>
+
+
+                    <span class="notification">
+                        ♧
+                    </span>
+
+
+                    <div class="profile">
+
+                        <div class="small-avatar">
+                            A
+                        </div>
+
+                        <span>Admin</span>
+
+                        <span>⌄</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- Content -->
+            <section class="content">
+
+
+                <div class="page-header">
+
+                    <div>
+                        <h1>Events</h1>
+
+                        <p>
+                            Manage all events
+                        </p>
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        id="addEventBtn"
+                    >
+                        + Add Event
+                    </button>
+
+                </div>
+
+
+                <!-- Filters -->
+                <div class="filters">
+
+
+                    <div class="search-box">
+
+                        🔍
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search events..."
+                        >
+
+                    </div>
+
+
+                    <select id="eventFilter">
+
+                        <option value="all">
+                            All events
+                        </option>
+
+                        <option value="confirmed">
+                            Confirmed
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+                <!-- Events Table -->
+                <div class="table-container">
+
+                    <table>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>Event</th>
+
+                                <th>Date</th>
+
+                                <th>Location</th>
+
+                                <th>Tickets</th>
+
+                                <th>Price</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="eventsTable">
+
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>
+                                    Tech Conference 2025
+                                </td>
+
+                                <td>
+                                    10 Sep 2025
+                                </td>
+
+                                <td>
+                                    Cairo, Egypt
+                                </td>
+
+                                <td>
+                                    90
+                                </td>
+
+                                <td>
+                                    300 EGP
+                                </td>
+
+                                <td>
+
+                                    <span class="status confirmed">
+                                        Confirmed
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button class="action edit">
+                                        ✎
+                                    </button>
+
+                                    <button class="action delete">
+                                        ♧
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>
+                                    Music Festival
+                                </td>
+
+                                <td>
+                                    20 Sep 2025
+                                </td>
+
+                                <td>
+                                    Alexandria, Egypt
+                                </td>
+
+                                <td>
+                                    80
+                                </td>
+
+                                <td>
+                                    500 EGP
+                                </td>
+
+                                <td>
+
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button class="action edit">
+                                        ✎
+                                    </button>
+
+                                    <button class="action delete">
+                                        ♧
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>
+                                    Design Workshop
+                                </td>
+
+                                <td>
+                                    07 Sep 2025
+                                </td>
+
+                                <td>
+                                    Cairo, Egypt
+                                </td>
+
+                                <td>
+                                    50
+                                </td>
+
+                                <td>
+                                    300 EGP
+                                </td>
+
+                                <td>
+
+                                    <span class="status confirmed">
+                                        Confirmed
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button class="action edit">
+                                        ✎
+                                    </button>
+
+                                    <button class="action delete">
+                                        ♧
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>
+                                    Networking Summit
+                                </td>
+
+                                <td>
+                                    15 Sep 2025
+                                </td>
+
+                                <td>
+                                    Giza
+                                </td>
+
+                                <td>
+                                    120
+                                </td>
+
+                                <td>
+                                    600 EGP
+                                </td>
+
+                                <td>
+
+                                    <span class="status confirmed">
+                                        Confirmed
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button class="action edit">
+                                        ✎
+                                    </button>
+
+                                    <button class="action delete">
+                                        ♧
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>
+                                    Art Exhibition
+                                </td>
+
+                                <td>
+                                    30 Sep 2025
+                                </td>
+
+                                <td>
+                                    Cairo, Egypt
+                                </td>
+
+                                <td>
+                                    30
+                                </td>
+
+                                <td>
+                                    100 EGP
+                                </td>
+
+                                <td>
+
+                                    <span class="status confirmed">
+                                        Confirmed
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button class="action edit">
+                                        ✎
+                                    </button>
+
+                                    <button class="action delete">
+                                        ♧
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>6</td>
+
+                                <td>
+                                    Startup Summit
+                                </td>
+
+                                <td>
+                                    16 Sep 2025
+                                </td>
+
+                                <td>
+                                    Cairo, Egypt
+                                </td>
+
+                                <td>
+                                    50
+                                </td>
+
+                                <td>
+                                    190 EGP
+                                </td>
+
+                                <td>
+
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button class="action edit">
+                                        ✎
+                                    </button>
+
+                                    <button class="action delete">
+                                        ♧
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- Pagination -->
+                <div class="pagination">
+
+                    <button>
+                        ‹
+                    </button>
+
+                    <button class="current">
+                        1
+                    </button>
+
+                    <button>
+                        2
+                    </button>
+
+                    <button>
+                        3
+                    </button>
+
+                    <span>
+                        ...
+                    </span>
+
+                    <button>
+                        10
+                    </button>
+
+                    <button>
+                        ›
+                    </button>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/events.js"></script>
+
+</body>
+
+</html>
