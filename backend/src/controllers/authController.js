@@ -22,7 +22,7 @@ const generateToken = (user) => {
 
 const registerUser = async (req, res) => {
 
-    console.log("🔥 REGISTER ROUTE HIT");
+    console.log("REGISTER ROUTE HIT");
     console.log("BODY:", req.body);
 
     try {
