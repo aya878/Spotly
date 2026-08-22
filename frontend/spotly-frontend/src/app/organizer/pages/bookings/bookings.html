@@ -142,7 +142,8 @@
                   <span
                     class="status-badge"
                     [class.confirmed]="booking.status === 'Confirmed'"
-                    [class.pending]="booking.status === 'Pending'">
+                    [class.pending]="booking.status === 'Pending'"
+                    [class.cancelled]="booking.status === 'Cancelled'">
 
                     {{ booking.status }}
 

@@ -22,13 +22,7 @@ export class Profile implements OnInit {
 
   ngOnInit(): void {
 
-    const savedProfile = localStorage.getItem('spotlyProfile');
 
-    if (savedProfile) {
-
-      this.profile = JSON.parse(savedProfile);
-
-    }
 
   }
 
@@ -42,13 +36,7 @@ export class Profile implements OnInit {
 
     }
 
-    localStorage.setItem(
-      'spotlyProfile',
-      JSON.stringify(this.profile)
-    );
-
-    console.log('Updated Profile:', this.profile);
-
+    
     this.isEditing = false;
 
   }

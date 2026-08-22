@@ -418,14 +418,14 @@
 }
 
 .edit-btn {
-  border: 1px solid #b7e4c7;
-  background: #eefaf2;
-  color: #35a66f;
+  border: 1px solid #b7dae4;
+  background: #eef8fa;
+  color: #358ca6;
 }
 
 .edit-btn:hover {
-  background: #35a66f;
-  border-color: #35a66f;
+  background: #3577a6;
+  border-color: #3584a6;
   color: white;
 }
 

@@ -181,6 +181,10 @@
   background-color: #fff4dc;
   color: #b87900;
 }
+.status-badge.cancelled {
+  background-color: #ffdcdc;
+  color: #b80000;
+}
 
 .loading-state {
   min-height: 220px;

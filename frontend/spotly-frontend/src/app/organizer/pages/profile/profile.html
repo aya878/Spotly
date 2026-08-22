@@ -131,7 +131,7 @@
                 [type]="passwordVisible ? 'text' : 'password'"
                 class="form-control"
                 [(ngModel)]="profile.password"
-                [disabled]="!isEditing"
+                [disabled]="!isEditing" required
               >
 
               <i

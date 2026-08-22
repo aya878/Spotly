@@ -28,7 +28,7 @@ export class Bookings {
       date: '2026-08-22',
       tickets: 3,
       amount: 1800,
-      status: 'Pending'
+      status: 'Cancelled'
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export class Bookings {
       date: '2026-08-25',
       tickets: 1,
       amount: 750,
-      status: 'Confirmed'
+      status: 'Pending'
     },
     {
       id: 4,
@@ -64,7 +64,7 @@ export class Bookings {
       date: '2026-09-05',
       tickets: 3,
       amount: 1500,
-      status: 'Confirmed'
+      status: 'Cancelled'
     }
   ];
 
