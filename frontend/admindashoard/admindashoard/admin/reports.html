@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports - Evently Admin</title>
+
+    <link rel="stylesheet" href="css/reports.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                ◈ Evently Admin
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    ⌂
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="users.html">
+                    ♙
+                    <span>Users</span>
+                </a>
+
+                <a href="events.html">
+                    ▣
+                    <span>Events</span>
+                </a>
+
+                <a href="bookings.html">
+                    ◉
+                    <span>Bookings</span>
+                </a>
+
+                <a href="categories.html">
+                    ▤
+                    <span>Categories</span>
+                </a>
+
+                <a href="reports.html" class="active">
+                    ▥
+                    <span>Reports</span>
+                </a>
+
+                <a href="#">
+                    ◉
+                    <span>Services</span>
+                </a>
+
+                <a href="settings.html">
+                    ⚙
+                    <span>Settings</span>
+                </a>
+
+                <a href="#">
+                    ♙
+                    <span>Admin</span>
+                </a>
+
+                <a href="#">
+                    ↪
+                    <span>Logout</span>
+                </a>
+
+            </nav>
+
+            <div class="admin-info">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>admin@email.com</small>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <button class="menu-btn">
+                    ☰
+                </button>
+
+                <div class="top-right">
+
+                    <div class="search-top">
+
+                        🔍
+
+                        <input
+                            type="text"
+                            placeholder="Search anything..."
+                        >
+
+                    </div>
+
+                    <span class="notification">
+                        ♧
+                    </span>
+
+                    <div class="profile">
+
+                        <div class="small-avatar">
+                            A
+                        </div>
+
+                        <span>Admin</span>
+
+                        <span>⌄</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- Content -->
+            <section class="content">
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h1>Reports</h1>
+
+                        <p>
+                            View event and booking reports
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="export-btn"
+                        id="exportBtn"
+                    >
+                        ↓ Export Report
+                    </button>
+
+                </div>
+
+
+                <!-- Filters -->
+
+                <div class="report-filters">
+
+                    <div class="filter-item">
+
+                        <label>
+                            From
+                        </label>
+
+                        <input
+                            type="date"
+                            id="fromDate"
+                        >
+
+                    </div>
+
+
+                    <div class="filter-item">
+
+                        <label>
+                            To
+                        </label>
+
+                        <input
+                            type="date"
+                            id="toDate"
+                        >
+
+                    </div>
+
+
+                    <div class="filter-item">
+
+                        <label>
+                            Category
+                        </label>
+
+                        <select id="categoryFilter">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="music">
+                                Music
+                            </option>
+
+                            <option value="technology">
+                                Technology
+                            </option>
+
+                            <option value="business">
+                                Business
+                            </option>
+
+                            <option value="art">
+                                Art
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        class="apply-btn"
+                        id="applyBtn"
+                    >
+                        Apply
+                    </button>
+
+                </div>
+
+
+                <!-- Statistics -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ▣
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Events
+                            </span>
+
+                            <strong>
+                                86
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ◉
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Bookings
+                            </span>
+
+                            <strong>
+                                1,248
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ♙
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Users
+                            </span>
+
+                            <strong>
+                                2,450
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            $
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Revenue
+                            </span>
+
+                            <strong>
+                                245K EGP
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Charts -->
+
+                <div class="charts-grid">
+
+                    <div class="chart-card">
+
+                        <div class="chart-header">
+
+                            <div>
+
+                                <h3>
+                                    Bookings Overview
+                                </h3>
+
+                                <p>
+                                    Monthly bookings
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="bar-chart">
+
+                            <div class="bar-item">
+
+                                <span>Jan</span>
+
+                                <div class="bar">
+                                    <i style="height:45%"></i>
+                                </div>
+
+                            </div>
+
+                            <div class="bar-item">
+
+                                <span>Feb</span>
+
+                                <div class="bar">
+                                    <i style="height:60%"></i>
+                                </div>
+
+                            </div>
+
+                            <div class="bar-item">
+
+                                <span>Mar</span>
+
+                                <div class="bar">
+                                    <i style="height:50%"></i>
+                                </div>
+
+                            </div>
+
+                            <div class="bar-item">
+
+                                <span>Apr</span>
+
+                                <div class="bar">
+                                    <i style="height:75%"></i>
+                                </div>
+
+                            </div>
+
+                            <div class="bar-item">
+
+                                <span>May</span>
+
+                                <div class="bar">
+                                    <i style="height:65%"></i>
+                                </div>
+
+                            </div>
+
+                            <div class="bar-item">
+
+                                <span>Jun</span>
+
+                                <div class="bar">
+                                    <i style="height:85%"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-card">
+
+                        <div class="chart-header">
+
+                            <div>
+
+                                <h3>
+                                    Events by Category
+                                </h3>
+
+                                <p>
+                                    Current distribution
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-report">
+
+                            <div class="report-row">
+
+                                <span>
+                                    Music
+                                </span>
+
+                                <strong>
+                                    28%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress">
+                                <i style="width:28%"></i>
+                            </div>
+
+
+                            <div class="report-row">
+
+                                <span>
+                                    Technology
+                                </span>
+
+                                <strong>
+                                    24%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress">
+                                <i style="width:24%"></i>
+                            </div>
+
+
+                            <div class="report-row">
+
+                                <span>
+                                    Business
+                                </span>
+
+                                <strong>
+                                    20%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress">
+                                <i style="width:20%"></i>
+                            </div>
+
+
+                            <div class="report-row">
+
+                                <span>
+                                    Art
+                                </span>
+
+                                <strong>
+                                    16%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress">
+                                <i style="width:16%"></i>
+                            </div>
+
+
+                            <div class="report-row">
+
+                                <span>
+                                    Other
+                                </span>
+
+                                <strong>
+                                    12%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress">
+                                <i style="width:12%"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Top Events -->
+
+                <div class="table-card">
+
+                    <div class="table-title">
+
+                        <div>
+
+                            <h3>
+                                Top Events
+                            </h3>
+
+                            <p>
+                                Most booked events
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Event
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Bookings
+                                </th>
+
+                                <th>
+                                    Revenue
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Tech Conference 2025
+                                </td>
+
+                                <td>
+                                    Technology
+                                </td>
+
+                                <td>
+                                    320
+                                </td>
+
+                                <td>
+                                    96,000 EGP
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Music Festival
+                                </td>
+
+                                <td>
+                                    Music
+                                </td>
+
+                                <td>
+                                    280
+                                </td>
+
+                                <td>
+                                    84,000 EGP
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Startup Summit
+                                </td>
+
+                                <td>
+                                    Business
+                                </td>
+
+                                <td>
+                                    210
+                                </td>
+
+                                <td>
+                                    63,000 EGP
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Art Exhibition
+                                </td>
+
+                                <td>
+                                    Art
+                                </td>
+
+                                <td>
+                                    150
+                                </td>
+
+                                <td>
+                                    30,000 EGP
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/reports.js"></script>
+
+</body>
+
+</html>
