@@ -9,13 +9,13 @@ const bookingRoutes = require("./routes/bookingRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
-console.log("🔥 SERVER FILE LOADED");
+console.log("SERVER FILE LOADED");
 
 app.use(cors());
 app.use(express.json());
 
 app.post("/test", (req, res) => {
-  console.log("🔥 TEST ROUTE HIT");
+  console.log("TEST ROUTE HIT");
   console.log(req.body);
 
   res.json({
